@@ -1,18 +1,11 @@
-import logo from './logo.svg';
-import './App.css';
-import { Link, Route, Routes } from 'react-router-dom';
-import React from 'react';
-
-function Home() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <h1>Studlet - dzienik przyszłości</h1>
-        <Link className='App-link' to="/about">About</Link>
-      </header>
-    </div>
-  );
-}
+// import 'bootstrap/dist/css/bootstrap.min.css';
+import './style.scss';
+import { Link, Route, Routes, useNavigate } from 'react-router-dom';
+import React, { useContext } from 'react';
+import Error from './Error';
+import Home from './Home';
+import RegisterForm from './RegisterForm';
+import Dashboard from './Dashboard';
 
 function About() {
   return (
@@ -25,25 +18,26 @@ function About() {
   );
 }
 
-function Error() {
-  return (
-    <div className='App'>
-      <header className='App-header'>
-        <h2>404</h2>
-        <Link className='App-link' to="/">Back to Home</Link>
-      </header>
-    </div>
-  );
-}
+export type LoginContextData = {
+  loggedIn: boolean;
+};
+
+export const LoginContext = React.createContext<LoginContextData>({ loggedIn: false });
 
 function App() {
   return (
     <React.StrictMode>
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/about" element={<About />} />
-        <Route path="*" element={<Error />} />
-      </Routes>
+      <LoginContext.Provider value={{ loggedIn: false }}>
+        <div className='container'>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/about" element={<About />} />
+            <Route path='/register' element={<RegisterForm />} />
+            <Route path="*" element={<Error />} />
+            <Route path='/dashboard' element={<Dashboard />} />
+          </Routes>
+        </div>
+      </LoginContext.Provider>
     </React.StrictMode>
   );
 }
