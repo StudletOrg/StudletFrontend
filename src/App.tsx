@@ -6,6 +6,7 @@ import Error from './Error';
 import Home from './Home';
 import RegisterForm from './RegisterForm';
 import Dashboard from './Dashboard';
+import { CookiesProvider } from 'react-cookie';
 
 function About() {
   return (
@@ -18,26 +19,28 @@ function About() {
   );
 }
 
-export type LoginContextData = {
-  loggedIn: boolean;
+export interface StyleContextData {
+  
 };
 
-export const LoginContext = React.createContext<LoginContextData>({ loggedIn: false });
+export const StyleContext = React.createContext<StyleContextData>({ });
 
 function App() {
   return (
     <React.StrictMode>
-      <LoginContext.Provider value={{ loggedIn: false }}>
-        <div className='container'>
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/about" element={<About />} />
-            <Route path='/register' element={<RegisterForm />} />
-            <Route path="*" element={<Error />} />
-            <Route path='/dashboard' element={<Dashboard />} />
-          </Routes>
-        </div>
-      </LoginContext.Provider>
+      <StyleContext.Provider value={{ }}>
+        <CookiesProvider>
+          <div className='container'>
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/about" element={<About />} />
+              <Route path='/register' element={<RegisterForm />} />
+              <Route path="*" element={<Error />} />
+              <Route path='/dashboard' element={<Dashboard />} />
+            </Routes>
+          </div>
+        </CookiesProvider>
+      </StyleContext.Provider>
     </React.StrictMode>
   );
 }

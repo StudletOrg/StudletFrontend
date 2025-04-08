@@ -1,12 +1,17 @@
 import { useContext } from "react";
 import LoginForm from "./LoginForm";
-import { LoginContext, LoginContextData } from "./App";
 import Dashboard from "./Dashboard";
+import { useCookies } from "react-cookie";
+import { isExpired } from "react-jwt";
 
 function Home() {
-  let { loggedIn } = useContext(LoginContext);
+  const [cookies, setCookie, removeCookie] = useCookies(['jwtToken']);
+  const loggedIn = cookies.jwtToken && !isExpired(cookies.jwtToken);
+
+  console.log(cookies.jwtToken, isExpired(cookies.jwtToken));
+
   return (
-      loggedIn ? <Dashboard /> : <LoginForm />
+    loggedIn ? <Dashboard /> : <LoginForm />
   );
 }
 
