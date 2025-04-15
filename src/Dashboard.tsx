@@ -4,6 +4,7 @@ import logo from "./img/logo32.png";
 import Logo from "./Logo";
 import DashboardCard from "./DashboardCard";
 import { Grade } from "./model/Grade";
+import FontSizeChanger from "./FontSizeChanger";
 
 interface DashboardLatestGradesProp {
   grades?: Grade[]
@@ -41,7 +42,7 @@ function Dashboard() {
   return <>
     <Navbar expand="lg" className="bg-body-tertiary mb-2 mt-2 rounded-1 shadow-lg" sticky="top">
       <Container>
-        <Navbar.Brand href="#home">
+        <Navbar.Brand>
           <Logo />
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
@@ -51,7 +52,8 @@ function Dashboard() {
           </Navbar.Text>
           <Nav.Link className="me-2" style={{ fontWeight: "bold", textDecoration: "underline" }}>Jan Kowalski</Nav.Link>
           <div className="vr me-2"></div>
-          <Nav.Link onClick={() => { }}>Wyloguj</Nav.Link>
+          <Nav.Link className="me-2" onClick={() => { }}>Wyloguj</Nav.Link>
+          <FontSizeChanger />
         </Navbar.Collapse>
       </Container>
     </Navbar>

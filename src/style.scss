@@ -1,3 +1,15 @@
 $primary: #db8d20;
 
 @import "~bootstrap/scss/bootstrap";
+
+.text-normal {
+    font-size: 1rem;
+}
+
+.text-large {
+    font-size: 1.3rem;
+}
+
+.text-extralarge {
+    font-size: 2rem;
+}
