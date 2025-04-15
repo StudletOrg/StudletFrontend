@@ -4,6 +4,7 @@ import React from 'react';
 import { Button, Card, Form } from 'react-bootstrap';
 import axios from 'axios';
 import { useCookies } from 'react-cookie';
+import FontSizeChanger from './FontSizeChanger';
 
 interface LoginResponseData {
   token: string
@@ -57,36 +58,41 @@ function LoginForm() {
   };
 
   return (
-    <div className="d-flex justify-content-center align-items-center vh-100">
-      <Card style={{ width: '25rem' }}>
-        <Card.Body>
-          <Card.Title className="text-center p-2">
-            <h4 className="card-title text-center d-flex flex-row justify-content-center align-items-center">
-              <img src={logo} alt="logo" className="rounded me-2" />
-              <span>Studlet</span>
-            </h4>
-          </Card.Title>
-          <Card.Text>
-            <Form noValidate onSubmit={onSubmitClick}>
-              <Form.Group className='mb-3'>
-                <Form.Label>E-mail</Form.Label>
-                <Form.Control type="email" onChange={e => setEmail(e.target.value)} required />
-                {emailError.length > 0 && <Form.Text className='text-danger'>{emailError}</Form.Text>}
-              </Form.Group>
-              <Form.Group className='mb-3'>
-                <Form.Label>Hasło</Form.Label>
-                <Form.Control type="password" onChange={e => setPassword(e.target.value)} required />
-                {passwordError.length > 0 && <Form.Text className='text-danger'>{passwordError}</Form.Text>}
-              </Form.Group>
-              <Form.Group className='mb-3'>
-                <Form.Check type="checkbox" label="Zapamietaj mnie" id='rememberme' onChange={e => setRememberMe(e.target.checked)} checked={rememberMe}/>
-              </Form.Group>
-              <Button type="submit" variant="primary" style={{ width: '100%' }}>Zaloguj</Button>
-            </Form>
-          </Card.Text>
-        </Card.Body>
-      </Card>
-    </div>
+    <>
+      <div style={{ position: 'absolute', top: '0.5rem', left: '0.5rem' }}>
+        <FontSizeChanger style={{ backgroundColor: 'white' }} />
+      </div>
+      <div className="d-flex justify-content-center align-items-center vh-100">
+        <Card style={{ width: '25rem' }}>
+          <Card.Body>
+            <Card.Title className="text-center p-2">
+              <h4 className="card-title text-center d-flex flex-row justify-content-center align-items-center">
+                <img src={logo} alt="logo" className="rounded me-2" />
+                <span>Studlet</span>
+              </h4>
+            </Card.Title>
+            <Card.Text>
+              <Form noValidate onSubmit={onSubmitClick}>
+                <Form.Group className='mb-3'>
+                  <Form.Label>E-mail</Form.Label>
+                  <Form.Control type="email" onChange={e => setEmail(e.target.value)} required />
+                  {emailError.length > 0 && <Form.Text className='text-danger'>{emailError}</Form.Text>}
+                </Form.Group>
+                <Form.Group className='mb-3'>
+                  <Form.Label>Hasło</Form.Label>
+                  <Form.Control type="password" onChange={e => setPassword(e.target.value)} required />
+                  {passwordError.length > 0 && <Form.Text className='text-danger'>{passwordError}</Form.Text>}
+                </Form.Group>
+                <Form.Group className='mb-3'>
+                  <Form.Check type="checkbox" label="Zapamietaj mnie" id='rememberme' onChange={e => setRememberMe(e.target.checked)} checked={rememberMe}/>
+                </Form.Group>
+                <Button type="submit" variant="primary" style={{ width: '100%' }}>Zaloguj</Button>
+              </Form>
+            </Card.Text>
+          </Card.Body>
+        </Card>
+      </div>
+    </>
   );
 }
 

@@ -6,7 +6,8 @@ import Error from './Error';
 import Home from './Home';
 import RegisterForm from './RegisterForm';
 import Dashboard from './Dashboard';
-import { CookiesProvider } from 'react-cookie';
+import { CookiesProvider, useCookies } from 'react-cookie';
+import { FontSizeType } from './FontSizeChanger';
 
 function About() {
   return (
@@ -19,28 +20,32 @@ function About() {
   );
 }
 
-export interface StyleContextData {
-  
-};
+function Container() {
+  const [style, setStyle, removeCookie] = useCookies(['fontSize']);
+  const fontSize = style.fontSize as FontSizeType | undefined;
+  if (fontSize === undefined) {
+    setStyle('fontSize', 'normal', { path: '/', expires: new Date(Date.now() + 1000 * 60 * 60 * 24 * 365) });
+  }
 
-export const StyleContext = React.createContext<StyleContextData>({ });
+  return (
+    <div className={`container ${fontSize ? "text-" + fontSize : "normal"}`}>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
+        <Route path='/register' element={<RegisterForm />} />
+        <Route path="*" element={<Error />} />
+        <Route path='/dashboard' element={<Dashboard />} />
+      </Routes>
+    </div>
+  );
+}
 
 function App() {
   return (
     <React.StrictMode>
-      <StyleContext.Provider value={{ }}>
-        <CookiesProvider>
-          <div className='container'>
-            <Routes>
-              <Route path="/" element={<Home />} />
-              <Route path="/about" element={<About />} />
-              <Route path='/register' element={<RegisterForm />} />
-              <Route path="*" element={<Error />} />
-              <Route path='/dashboard' element={<Dashboard />} />
-            </Routes>
-          </div>
-        </CookiesProvider>
-      </StyleContext.Provider>
+      <CookiesProvider>
+        <Container />
+      </CookiesProvider>
     </React.StrictMode>
   );
 }
