@@ -5,6 +5,7 @@ import Logo from "./Logo";
 import DashboardCard from "./DashboardCard";
 import { Grade } from "./model/Grade";
 import FontSizeChanger from "./FontSizeChanger";
+import axios from 'axios';
 
 interface DashboardLatestGradesProp {
   grades?: Grade[]
@@ -39,6 +40,41 @@ function DashboardSubjects(prop: DashboardSubjectsProp) {
 }
 
 function Dashboard() {
+  const [grades, setGrades] = React.useState<Grade[]>([]);
+  const [subjects, setSubjects] = React.useState<string[]>([]);
+  const token = localStorage.getItem('jwtToken');
+
+  React.useEffect(() => {
+    axios.get(`${process.env.REACT_APP_API_URL}/api/student/mygrades`, {
+      withCredentials: true,
+      headers: {
+        'Authorization': `Bearer ${token}`
+      }
+    })
+    .then(response => {
+      setGrades(response.data);
+    })
+    .catch(error => {
+      console.error("Błąd pobierania ocen:", error);
+    });
+  }, [token]);
+
+  React.useEffect(() => {
+    axios.get(`${process.env.REACT_APP_API_URL}/api/student/mysubjects`, {
+      withCredentials: true,
+      headers: {
+        'Authorization': `Bearer ${token}`
+      }
+    })
+    .then(response => {
+      console.log("Oceny:", response.data);
+      setSubjects(response.data);
+    })
+    .catch(error => {
+      console.error("Błąd pobierania przedmiotów:", error);
+    });
+  }, [token]);
+  
   return <>
     <Navbar expand="lg" className="bg-body-tertiary mb-2 mt-2 rounded-1 shadow-lg" sticky="top">
       <Container>
@@ -60,23 +96,13 @@ function Dashboard() {
     <Container className="bg-body-tertiary vh-100 p-3 rounded-1 shadow-lg">
       <Row>
         <Col lg={4}>
-          <DashboardLatestGrades grades={[
-            { subject: "Matematyka", grade: 5 },
-            { subject: "Język angielski", grade: 4 },
-            { subject: "Język polski", grade: 5 }
-          ]} />
+          <DashboardLatestGrades grades={grades} />
         </Col>
         <Col lg={4}>
-          <DashboardSubjects subjects={[
-            "Matematyka", "Język angielski", "Język polski"
-          ]} />
+          <DashboardSubjects subjects={subjects} />
         </Col>
         <Col lg={4}>
-          <DashboardLatestGrades grades={[
-            { subject: "Matematyka", grade: 5 },
-            { subject: "Język angielski", grade: 4 },
-            { subject: "Język polski", grade: 5 }
-          ]} />
+          <DashboardLatestGrades grades={grades}  />
         </Col>
       </Row>
     </Container>

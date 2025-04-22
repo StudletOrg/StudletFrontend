@@ -43,6 +43,7 @@ function LoginForm() {
       }).then((response) => {
         if (response.status === 200) {
           const data = response.data as LoginResponseData;
+          localStorage.setItem('jwtToken', data.token);
           setCookie('jwtToken', data.token, {
             path: '/',
             expires: rememberMe ? new Date(Date.now() + 1000 * 60 * 60 * 24 * 365) : undefined // 365 dni na wygasniecie ciasteczka
