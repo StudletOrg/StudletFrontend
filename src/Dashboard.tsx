@@ -6,6 +6,7 @@ import DashboardCard from "./DashboardCard";
 import { Grade } from "./model/Grade";
 import FontSizeChanger from "./FontSizeChanger";
 import axios from 'axios';
+import { Link } from "react-router-dom";
 
 interface DashboardLatestGradesProp {
   grades?: Grade[]
@@ -23,8 +24,13 @@ function DashboardLatestGrades(prop: DashboardLatestGradesProp) {
   } />;
 }
 
-interface DashboardSubjectsProp {
-  subjects?: string[]
+export interface Subject {
+  id: number;
+  nazwa: string;
+}
+
+export interface DashboardSubjectsProp {
+  subjects?: Subject[];
 }
 
 function DashboardSubjects(prop: DashboardSubjectsProp) {
@@ -32,7 +38,7 @@ function DashboardSubjects(prop: DashboardSubjectsProp) {
     <Card.Text>
       {prop.subjects?.map((subject, index) => (
         <div key={index}>
-          {subject}
+          <Link to={`/groups/${subject.id}`}>{subject.nazwa}</Link>
         </div>
       ))}
     </Card.Text>
@@ -41,7 +47,7 @@ function DashboardSubjects(prop: DashboardSubjectsProp) {
 
 function Dashboard() {
   const [grades, setGrades] = React.useState<Grade[]>([]);
-  const [subjects, setSubjects] = React.useState<string[]>([]);
+  const [subjects, setSubjects] = React.useState<Subject[]>([]);
   const token = localStorage.getItem('jwtToken');
 
   React.useEffect(() => {

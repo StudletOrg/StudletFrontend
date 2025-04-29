@@ -6,6 +6,7 @@ import Error from './Error';
 import Home from './Home';
 import RegisterForm from './RegisterForm';
 import Dashboard from './Dashboard';
+import GroupDetails from './GroupDetails';
 import { CookiesProvider, useCookies } from 'react-cookie';
 import { FontSizeType } from './FontSizeChanger';
 
@@ -35,6 +36,7 @@ function Container() {
         <Route path='/register' element={<RegisterForm />} />
         <Route path="*" element={<Error />} />
         <Route path='/dashboard' element={<Dashboard />} />
+        <Route path="/groups/:groupId" element={<GroupDetails />} />
       </Routes>
     </div>
   );
