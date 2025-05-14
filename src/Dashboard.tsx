@@ -7,6 +7,7 @@ import { Grade } from "./model/Grade";
 import FontSizeChanger from "./FontSizeChanger";
 import axios from 'axios';
 import { Link } from "react-router-dom";
+import AppNavbar, { Student } from "./AppNavbar";
 
 interface DashboardLatestGradesProp {
   grades?: Grade[]
@@ -82,23 +83,7 @@ function Dashboard() {
   }, [token]);
   
   return <>
-    <Navbar expand="lg" className="bg-body-tertiary mb-2 mt-2 rounded-1 shadow-lg" sticky="top">
-      <Container>
-        <Navbar.Brand>
-          <Logo />
-        </Navbar.Brand>
-        <Navbar.Toggle aria-controls="basic-navbar-nav" />
-        <Navbar.Collapse className="justify-content-end">
-          <Navbar.Text>
-            Zalogowano jako:&nbsp;
-          </Navbar.Text>
-          <Nav.Link className="me-2" style={{ fontWeight: "bold", textDecoration: "underline" }}>Jan Kowalski</Nav.Link>
-          <div className="vr me-2"></div>
-          <Nav.Link className="me-2" onClick={() => { }}>Wyloguj</Nav.Link>
-          <FontSizeChanger />
-        </Navbar.Collapse>
-      </Container>
-    </Navbar>
+    <AppNavbar onLogout={() => {  }} />
     <Container className="bg-body-tertiary vh-100 p-3 rounded-1 shadow-lg">
       <Row>
         <Col lg={4}>

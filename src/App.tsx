@@ -9,6 +9,7 @@ import Dashboard from './Dashboard';
 import GroupDetails from './GroupDetails';
 import { CookiesProvider, useCookies } from 'react-cookie';
 import { FontSizeType } from './FontSizeChanger';
+import UserDetails from './UserDetails';
 
 function About() {
   return (
@@ -37,6 +38,7 @@ function Container() {
         <Route path="*" element={<Error />} />
         <Route path='/dashboard' element={<Dashboard />} />
         <Route path="/groups/:groupId" element={<GroupDetails />} />
+        <Route path="/me" element={<UserDetails />} />
       </Routes>
     </div>
   );

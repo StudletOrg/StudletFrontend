@@ -7,11 +7,13 @@ import { Card, Col, Container, ListGroup, Nav, Navbar, NavDropdown, Row } from "
 import logo from "./img/logo32.png";
 import Logo from "./Logo";
 import FontSizeChanger from "./FontSizeChanger";
+import AppNavbar, {Student} from './AppNavbar';
 
 function GroupDetails() {
   const { groupId } = useParams();
   const [group, setGroup] = useState<Group | null>(null);
   const [loading, setLoading] = useState(true);
+  const [grades, setGrades] = useState([]);
   const token = localStorage.getItem('jwtToken');
 
   React.useEffect(() => {
@@ -22,7 +24,7 @@ function GroupDetails() {
       }
     })
     .then(res => {
-      console.log("Oceny:", res.data);
+      console.log("przedmiot:", res.data);
       setGroup(res.data);
       setLoading(false);
     })
@@ -31,29 +33,31 @@ function GroupDetails() {
     });
   }, [token]);
 
+  useEffect(() => {
+    if (groupId) {
+      const studentId = -1;
+      axios.get(`${process.env.REACT_APP_API_URL}/api/student/${studentId}/subject/${groupId}/grades`, {
+        withCredentials: true,
+        headers: {
+          'Authorization': `Bearer ${token}`
+        }
+      })
+      .then(res => {
+        setGrades(res.data);
+        setLoading(false);
+      })
+      .catch(error => {
+        console.error("Błąd pobierania ocen:", error);
+      });
+    }
+  }, [groupId, token]);
+
   if (loading) return <p>Ładowanie...</p>;
   if (!group) return <p>Nie znaleziono grupy.</p>;
 
   return (
     <>
-      <Navbar expand="lg" className="bg-body-tertiary mb-2 mt-2 rounded-1 shadow-lg" sticky="top">
-        <Container>
-          <Navbar.Brand>
-            <Logo />
-          </Navbar.Brand>
-          <Navbar.Toggle aria-controls="basic-navbar-nav" />
-          <Navbar.Collapse className="justify-content-end">
-            <Navbar.Text>
-              Zalogowano jako:&nbsp;
-            </Navbar.Text>
-            <Nav.Link className="me-2" style={{ fontWeight: "bold", textDecoration: "underline" }}>Jan Kowalski</Nav.Link>
-            <div className="vr me-2"></div>
-            <Nav.Link className="me-2" onClick={() => { }}>Wyloguj</Nav.Link>
-            <FontSizeChanger />
-          </Navbar.Collapse>
-        </Container>
-      </Navbar>
-
+      <AppNavbar onLogout={() => {  }} />
       <Container className="bg-body-tertiary vh-100 p-3 rounded-1 shadow-lg">
         {loading ? (
           <p>Ładowanie...</p>
@@ -79,6 +83,20 @@ function GroupDetails() {
                     </>
                   ) : (
                     <Card.Text>Brak przypisanego profesora</Card.Text>
+                  )}
+                </Card.Body>
+                <Card.Body>
+                  <Card.Title>Twoje oceny</Card.Title>
+                    {grades.length > 0 ? (
+                    <ListGroup>
+                      {grades.map((grade: any) => (
+                        <ListGroup.Item key={grade.id}>
+                          <strong>Ocena: </strong>{grade.value}
+                        </ListGroup.Item>
+                      ))}
+                    </ListGroup>
+                  ) : (
+                    <Card.Text>Brak ocen dla tej grupy.</Card.Text>
                   )}
                 </Card.Body>
               </Card>
