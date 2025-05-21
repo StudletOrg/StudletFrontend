@@ -8,6 +8,7 @@ import logo from "./img/logo32.png";
 import Logo from "./Logo";
 import FontSizeChanger from "./FontSizeChanger";
 import AppNavbar, {Student} from './AppNavbar';
+import SideMenu from './SideMenu';
 
 function GroupDetails() {
   const { groupId } = useParams();
@@ -52,57 +53,64 @@ function GroupDetails() {
     }
   }, [groupId, token]);
 
-  if (loading) return <p>Ładowanie...</p>;
+  if (loading) return <p className="loading">Ładowanie...</p>;
   if (!group) return <p>Nie znaleziono grupy.</p>;
 
   return (
     <>
       <AppNavbar onLogout={() => {  }} />
-      <Container className="bg-body-tertiary vh-100 p-3 rounded-1 shadow-lg">
-        {loading ? (
-          <p>Ładowanie...</p>
-        ) : !group ? (
-          <p>Nie znaleziono grupy.</p>
-        ) : (
-            <Row className="justify-content-center">
-            <Col lg={8}>
-              <Card className="shadow-sm">
-                <Card.Header as="h4">Grupa {group.groupNumber}</Card.Header>
-                <ListGroup variant="flush">
-                  <ListGroup.Item><strong>ID grupy:</strong> {group.groupId}</ListGroup.Item>
-                  <ListGroup.Item><strong>Liczba studentów:</strong> {group.studentCount}</ListGroup.Item>
-                  <ListGroup.Item><strong>Przedmiot:</strong> {group.subject}</ListGroup.Item>
-                </ListGroup>
-      
-                <Card.Body>
-                  <Card.Title>Profesor prowadzący</Card.Title>
-                  {group.professor.firstName || group.professor.lastName || group.professor.email ? (
-                    <>
-                      <Card.Text>{group.professor.firstName ?? 'Brak imienia'} {group.professor.lastName ?? 'Brak nazwiska'}</Card.Text>
-                      <Card.Text>{group.professor.email ?? 'Brak adresu e-mail'}</Card.Text>
-                    </>
-                  ) : (
-                    <Card.Text>Brak przypisanego profesora</Card.Text>
-                  )}
-                </Card.Body>
-                <Card.Body>
-                  <Card.Title>Twoje oceny</Card.Title>
-                    {grades.length > 0 ? (
-                    <ListGroup>
-                      {grades.map((grade: any) => (
-                        <ListGroup.Item key={grade.id}>
-                          <strong>Ocena: </strong>{grade.value}
-                        </ListGroup.Item>
-                      ))}
-                    </ListGroup>
-                  ) : (
-                    <Card.Text>Brak ocen dla tej grupy.</Card.Text>
-                  )}
-                </Card.Body>
-              </Card>
+        <Container fluid className="bg-body-tertiary vh-100 p-3 rounded-1 shadow-lg">
+          <Row className="h-100">
+            <Col lg={2} className="bg-light border-end p-3">
+              <SideMenu />
             </Col>
-          </Row>
-        )}
+            <Col lg={8}>
+            {loading ? (
+              <p>Ładowanie...</p>
+            ) : !group ? (
+              <p>Nie znaleziono grupy.</p>
+            ) : (
+          <Row className="justify-content-center">
+              <Col lg={8}>
+                <Card className="shadow-sm">
+                  <Card.Header as="h4">Grupa {group.groupNumber}</Card.Header>
+                  <ListGroup variant="flush">
+                    <ListGroup.Item><strong>ID grupy:</strong> {group.groupId}</ListGroup.Item>
+                    <ListGroup.Item><strong>Liczba studentów:</strong> {group.studentCount}</ListGroup.Item>
+                    <ListGroup.Item><strong>Przedmiot:</strong> {group.subject}</ListGroup.Item>
+                  </ListGroup>
+        
+                  <Card.Body>
+                    <Card.Title>Profesor prowadzący</Card.Title>
+                    {group.professor.firstName || group.professor.lastName || group.professor.email ? (
+                      <>
+                        <Card.Text>{group.professor.firstName ?? 'Brak imienia'} {group.professor.lastName ?? 'Brak nazwiska'}</Card.Text>
+                        <Card.Text>{group.professor.email ?? 'Brak adresu e-mail'}</Card.Text>
+                      </>
+                    ) : (
+                      <Card.Text>Brak przypisanego profesora</Card.Text>
+                    )}
+                  </Card.Body>
+                  <Card.Body>
+                    <Card.Title>Twoje oceny</Card.Title>
+                      {grades.length > 0 ? (
+                      <ListGroup>
+                        {grades.map((grade: any) => (
+                          <ListGroup.Item key={grade.id}>
+                            <strong>Ocena: </strong>{grade.value}
+                          </ListGroup.Item>
+                        ))}
+                      </ListGroup>
+                    ) : (
+                      <Card.Text>Brak ocen dla tej grupy.</Card.Text>
+                    )}
+                  </Card.Body>
+                </Card>
+              </Col>
+            </Row>
+          )}
+          </Col>
+        </Row>
       </Container>
     </>
   );

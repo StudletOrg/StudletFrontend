@@ -5,6 +5,7 @@ import FontSizeChanger from "./FontSizeChanger";
 import Logo from "./Logo";
 import axios from "axios";
 import { Link } from "react-router-dom";
+import { useCookies } from "react-cookie";
 
 interface AppNavbarProps {
   onLogout?: () => void;
@@ -20,6 +21,8 @@ export interface Student {
 }
 
 const AppNavbar: React.FC<AppNavbarProps> = ({ onLogout }) => {
+    
+    const [cookies, setCookie, removeCookie] = useCookies(['jwtToken']);
     const token = localStorage.getItem('jwtToken');
     const [student, setStudent] = React.useState<Student | null>(null);
 
@@ -32,11 +35,22 @@ const AppNavbar: React.FC<AppNavbarProps> = ({ onLogout }) => {
         })
         .then(response => {
         setStudent(response.data);
+        localStorage.setItem('roles', JSON.stringify(response.data.roles));
         })
         .catch(error => {
         console.error("Błąd pobierania informacji:", error);
         });
     }, [token]);
+
+    const handleLogout = () => {
+        localStorage.removeItem('jwtToken');
+        localStorage.removeItem('roles');
+        removeCookie("jwtToken", { path: "/" });
+        setStudent(null);
+        if (onLogout) {
+          onLogout();
+        }
+    };
     
     return (
         <Navbar expand="lg" className="bg-body-tertiary mb-2 mt-2 rounded-1 shadow-lg" sticky="top">
@@ -53,7 +67,7 @@ const AppNavbar: React.FC<AppNavbarProps> = ({ onLogout }) => {
                 {student?.firstname} {student?.lastname}
             </Nav.Link>
             <div className="vr me-2"></div>
-            <Nav.Link className="me-2" onClick={onLogout}>Wyloguj</Nav.Link>
+            <Nav.Link className="me-2" onClick={handleLogout}>Wyloguj</Nav.Link>
             <FontSizeChanger />
             </Navbar.Collapse>
         </Container>

@@ -8,6 +8,7 @@ import FontSizeChanger from "./FontSizeChanger";
 import axios from 'axios';
 import { Link } from "react-router-dom";
 import AppNavbar, { Student } from "./AppNavbar";
+import SideMenu from "./SideMenu";
 
 interface DashboardLatestGradesProp {
   grades?: Grade[]
@@ -84,16 +85,23 @@ function Dashboard() {
   
   return <>
     <AppNavbar onLogout={() => {  }} />
-    <Container className="bg-body-tertiary vh-100 p-3 rounded-1 shadow-lg">
-      <Row>
-        <Col lg={4}>
-          <DashboardLatestGrades grades={grades} />
+    <Container fluid className="bg-body-tertiary vh-100 p-3 rounded-1 shadow-lg">
+      <Row className="h-100">
+        <Col lg={2} className="bg-light border-end p-3">
+          <SideMenu />
         </Col>
-        <Col lg={4}>
-          <DashboardSubjects subjects={subjects} />
-        </Col>
-        <Col lg={4}>
-          <DashboardLatestGrades grades={grades}  />
+        <Col lg={10}>
+          <Row>
+            <Col lg={3}>
+              <DashboardLatestGrades grades={grades} />
+            </Col>
+            <Col lg={4}>
+              <DashboardSubjects subjects={subjects} />
+            </Col>
+            <Col lg={3}>
+              <DashboardLatestGrades grades={grades} />
+            </Col>
+          </Row>
         </Col>
       </Row>
     </Container>

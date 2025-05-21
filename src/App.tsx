@@ -10,6 +10,8 @@ import GroupDetails from './GroupDetails';
 import { CookiesProvider, useCookies } from 'react-cookie';
 import { FontSizeType } from './FontSizeChanger';
 import UserDetails from './UserDetails';
+import AllGrades from './Grades';
+import StudentGroups from './StudentGroups';
 
 function About() {
   return (
@@ -37,6 +39,8 @@ function Container() {
         <Route path='/register' element={<RegisterForm />} />
         <Route path="*" element={<Error />} />
         <Route path='/dashboard' element={<Dashboard />} />
+        <Route path='/grades' element={<AllGrades />} />
+        <Route path='/subjects' element={<StudentGroups />} />
         <Route path="/groups/:groupId" element={<GroupDetails />} />
         <Route path="/me" element={<UserDetails />} />
       </Routes>

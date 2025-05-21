@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { Container, Card, Col, Row, ListGroup } from "react-bootstrap";
 import AppNavbar from "./AppNavbar";
+import SideMenu from "./SideMenu";
 
 export interface Student {
   id: number;
@@ -34,14 +35,17 @@ function UserDetails() {
       });
   }, [token]);
 
-  if (loading) return <p>Ładowanie...</p>;
+  if (loading) return <p className="loading">Ładowanie...</p>;
   if (!student) return <p>Nie znaleziono danych użytkownika.</p>;
 
   return (
     <>
       <AppNavbar onLogout={() => {}} />
-      <Container className="bg-body-tertiary vh-100 p-3 rounded-1 shadow-lg">
-        <Row className="justify-content-center">
+      <Container fluid className="bg-body-tertiary vh-100 p-3 rounded-1 shadow-lg">
+        <Row className="h-100">
+          <Col lg={2} className="bg-light border-end p-3">
+            <SideMenu />
+          </Col>
           <Col lg={8}>
             <Card className="shadow-sm">
               <Card.Header as="h4">Dane użytkownika</Card.Header>

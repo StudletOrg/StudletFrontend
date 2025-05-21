@@ -7,7 +7,7 @@ import { useCookies } from 'react-cookie';
 import FontSizeChanger from './FontSizeChanger';
 
 interface LoginResponseData {
-  token: string
+  token: string;
 }
 
 function LoginForm() {
@@ -72,7 +72,7 @@ function LoginForm() {
                 <span>Studlet</span>
               </h4>
             </Card.Title>
-            <Card.Text>
+            <div>
               <Form noValidate onSubmit={onSubmitClick}>
                 <Form.Group className='mb-3'>
                   <Form.Label>E-mail</Form.Label>
@@ -89,7 +89,7 @@ function LoginForm() {
                 </Form.Group>
                 <Button type="submit" variant="primary" style={{ width: '100%' }}>Zaloguj</Button>
               </Form>
-            </Card.Text>
+            </div>
           </Card.Body>
         </Card>
       </div>
