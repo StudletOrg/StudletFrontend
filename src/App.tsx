@@ -48,6 +48,15 @@ function Container() {
   );
 }
 
+
+/**
+ * The main application component.
+ *
+ * This component is the root of the application and is responsible
+ * for rendering the main layout.
+ *
+ * @returns {JSX.Element} The main application component.
+ */
 function App() {
   return (
     <React.StrictMode>

@@ -28,7 +28,8 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "docs": "typedoc"
   },
   "eslintConfig": {
     "extends": [
@@ -47,5 +48,10 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "typedoc": "^0.26.11",
+    "typedoc-plugin-markdown": "^4.2.10",
+    "typedoc-plugin-pdf-export": "^0.0.3"
   }
 }

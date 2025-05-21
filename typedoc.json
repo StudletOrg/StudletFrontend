@@ -1,0 +1,10 @@
+{
+  "entryPoints": ["src/index.tsx", "src/**/*.tsx", "src/**/*.ts"], // Entry point of your React app
+  "out": "docs", // Output directory for the generated documentation
+  "includeVersion": true, // Include version in the documentation
+  "exclude": ["**/*.spec.ts", "**/*.test.ts"], // Exclude test files
+  "theme": "default", // You can change the theme if needed
+  "tsconfig": "tsconfig.json", // Path to your tsconfig file
+  "plugin": ["typedoc-plugin-markdown"],
+  "entryPointStrategy": "resolve"
+}
