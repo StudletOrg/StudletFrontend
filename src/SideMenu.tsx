@@ -11,8 +11,8 @@ const defaultMenu  = [
 ];
 
 const professorExtras = [
-  { path: "/professor/groups", label: "Moje grupy", icon: "👥" },
-  { path: "/professor/grades", label: "Wystaw oceny", icon: "📝" },
+  { path: "/teachergradestest", label: "Moje grupy", icon: "👥" },
+  { path: "/teachergradestest", label: "Inne", icon: "📝" },
 ];
 
 const SideMenu: React.FC = () => {

@@ -1,3 +1,15 @@
+export interface Note {
+    id: number;
+    title: string;
+    creationDate: string;
+    content: string | null;
+    author: {
+        id: number;
+        firstName: string;
+        lastName: string;
+    };
+}
+
 export interface Group {
     groupId: number;
     groupNumber: string;
@@ -8,4 +20,5 @@ export interface Group {
     };
     studentCount: number;
     subject: string;
+    notes?: Note[];
 }

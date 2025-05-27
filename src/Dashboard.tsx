@@ -95,13 +95,13 @@ function Dashboard() {
         </Col>
         <Col lg={["extralarge", "large"].find(c => c == fontSizeCookie.fontSize) ? 9 : 10}>
           <Row>
-            <Col lg={3}>
+            <Col lg={4}>
               <DashboardLatestGrades grades={grades} />
             </Col>
             <Col lg={4}>
               <DashboardSubjects subjects={subjects} />
             </Col>
-            <Col lg={3}>
+            <Col lg={4}>
               <DashboardLatestGrades grades={grades} />
             </Col>
           </Row>

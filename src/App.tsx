@@ -13,6 +13,8 @@ import UserDetails from './UserDetails';
 import AllGrades from './Grades';
 import StudentGroups from './StudentGroups';
 import TeacherGrades from './TeacherGrades';
+import CreateNote from './CreateNote';
+import AddGrade from './AddGrade';
 
 function About() {
   return (
@@ -45,6 +47,7 @@ function Container() {
         <Route path="/groups/:groupId" element={<GroupDetails />} />
         <Route path="/me" element={<UserDetails />} />
         <Route path='/teachergradestest' element={<TeacherGrades />} />
+        <Route path="/notes/new" element={<CreateNote />} /><Route path="/grades/add/:groupId/:studentId" element={<AddGrade />} />
       </Routes>
     </div>
   );
