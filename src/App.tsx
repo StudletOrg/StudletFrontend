@@ -12,6 +12,7 @@ import { FontSizeType } from './FontSizeChanger';
 import UserDetails from './UserDetails';
 import AllGrades from './Grades';
 import StudentGroups from './StudentGroups';
+import TeacherGrades from './TeacherGrades';
 
 function About() {
   return (
@@ -43,6 +44,7 @@ function Container() {
         <Route path='/subjects' element={<StudentGroups />} />
         <Route path="/groups/:groupId" element={<GroupDetails />} />
         <Route path="/me" element={<UserDetails />} />
+        <Route path='/teachergradestest' element={<TeacherGrades />} />
       </Routes>
     </div>
   );
