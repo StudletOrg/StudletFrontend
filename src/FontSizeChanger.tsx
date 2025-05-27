@@ -24,9 +24,9 @@ export default function FontSizeChanger(props: FontSizeChangerProps) {
 
   return (
     <ButtonGroup style={props.style} className={props.className}>
-      <Button variant={`${selectedFontSize === "normal" ? "primary" : "outline-primary"}`} onClick={setFont("normal")} className="text-normal p-0 ps-1 pe-1">A</Button>
-      <Button variant={`${selectedFontSize === "large" ? "primary" : "outline-primary"}`} onClick={setFont("large")} className="text-large p-0 ps-1 pe-1">A</Button>
-      <Button variant={`${selectedFontSize === "extralarge" ? "primary" : "outline-primary"}`} onClick={setFont("extralarge")} className="text-extralarge p-0 ps-1 pe-1">A</Button>
+      <Button variant={`${selectedFontSize === "normal" ? "primary" : "outline-primary"}`} onClick={setFont("normal")} className="font-changer text-normal p-0 ps-1 pe-1">A</Button>
+      <Button variant={`${selectedFontSize === "large" ? "primary" : "outline-primary"}`} onClick={setFont("large")} className="font-changer text-large p-0 ps-1 pe-1">A</Button>
+      <Button variant={`${selectedFontSize === "extralarge" ? "primary" : "outline-primary"}`} onClick={setFont("extralarge")} className="font-changer text-extralarge p-0 ps-1 pe-1">A</Button>
     </ButtonGroup>
   );
 }

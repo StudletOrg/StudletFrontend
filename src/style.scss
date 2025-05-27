@@ -2,14 +2,14 @@ $primary: #db8d20;
 
 @import "~bootstrap/scss/bootstrap";
 
-.text-normal {
+.text-normal, .text-normal *:not(.font-changer) {
     font-size: 1rem;
 }
 
-.text-large {
+.text-large, .text-large *:not(.font-changer) {
     font-size: 1.3rem;
 }
 
-.text-extralarge {
+.text-extralarge, .text-extralarge *:not(.font-changer) {
     font-size: 2rem;
 }

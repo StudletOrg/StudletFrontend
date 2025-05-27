@@ -2,7 +2,7 @@ import logo from "./img/logo32.png";
 
 export default function Logo() {
   return (
-    <div className="d-flex flex-row">
+    <div className="d-flex flex-row align-items-center">
       <img src={logo} alt="logo" className="rounded me-1" />
       <span>Studlet</span>
     </div>

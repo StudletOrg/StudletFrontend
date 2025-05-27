@@ -4,11 +4,12 @@ import logo from "./img/logo32.png";
 import Logo from "./Logo";
 import DashboardCard from "./DashboardCard";
 import { Grade } from "./model/Grade";
-import FontSizeChanger from "./FontSizeChanger";
+import FontSizeChanger, { FontSizeType } from "./FontSizeChanger";
 import axios from 'axios';
 import { Link } from "react-router-dom";
 import AppNavbar, { Student } from "./AppNavbar";
 import SideMenu from "./SideMenu";
+import { useCookies } from "react-cookie";
 
 interface DashboardLatestGradesProp {
   grades?: Grade[]
@@ -52,6 +53,8 @@ function Dashboard() {
   const [subjects, setSubjects] = React.useState<Subject[]>([]);
   const token = localStorage.getItem('jwtToken');
 
+  const [fontSizeCookie, setFontSizeCookie, removeFontSizeCookie] = useCookies(['fontSize']);
+
   React.useEffect(() => {
     axios.get(`${process.env.REACT_APP_API_URL}/api/student/mygrades`, {
       withCredentials: true,
@@ -87,10 +90,10 @@ function Dashboard() {
     <AppNavbar onLogout={() => {  }} />
     <Container fluid className="bg-body-tertiary vh-100 p-3 rounded-1 shadow-lg">
       <Row className="h-100">
-        <Col lg={2} className="bg-light border-end p-3">
+        <Col lg={["extralarge", "large"].find(c => c == fontSizeCookie.fontSize) ? 3 : 2} className="bg-light border-end p-3">
           <SideMenu />
         </Col>
-        <Col lg={10}>
+        <Col lg={["extralarge", "large"].find(c => c == fontSizeCookie.fontSize) ? 9 : 10}>
           <Row>
             <Col lg={3}>
               <DashboardLatestGrades grades={grades} />
