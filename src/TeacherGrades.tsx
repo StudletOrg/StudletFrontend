@@ -137,7 +137,7 @@ export default function TeacherGrades() {
                   <Col className="text-end">
                     <Button
                       variant="outline-secondary"
-                      onClick={() => navigate("/notes/new")}
+                      onClick={() => navigate(`/add-student-to-group?groupId=${selectedGroupId}&fieldOfStudyId=${1}`)}
                     >
                       + Dodaj studenta
                     </Button>
