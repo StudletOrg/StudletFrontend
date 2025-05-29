@@ -1,11 +1,19 @@
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 
+![banner](Baner5.jpg)
+
 # Studlet Frontend
 
 This is a React frontend for the Studlet application. It is built with TypeScript programming language and Create React App script. Also it uses  uses `react-router` for client-side routing `bootstrap` for styling and `react-bootstrap` for bootstrap components in React, and `axios` for HTTP requests, and `react-cookie` for handling cookies.
 
 Documentation is generated using [typedoc](https://typedoc.org/) and [typedoc-plugin-markdown](https://github.com/TypeStrong/typedoc-plugin-markdown). And then it is merged using [concat-md](https://github.com/TypeStrong/concat-md) and [pandoc](https://pandoc.org/) to convert it to a pdf file.
+
+## Project members
+
+- Kamil Opara
+- Marceli Nowak
+- Maciej Kurek
 
 ## Folder Structure
 
@@ -15,7 +23,6 @@ The project is organized as follows:
 - `src/`: the source code for the frontend
     - `img/`: folder with images used by the typescript code
 	- `model/`: data models for the app
-	- `setupTests.ts`: Jest setup file
 	- `App.tsx`: the main application component
 	- `index.tsx`: the entry point for the app
     - `*.tsx`: other TypeScript files in the src directory with components
