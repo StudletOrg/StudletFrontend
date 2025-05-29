@@ -6,10 +6,25 @@ import axios from 'axios';
 import { useCookies } from 'react-cookie';
 import FontSizeChanger from './FontSizeChanger';
 
+/**
+ * Represents the response data received upon a successful login.
+ * 
+ * @interface LoginResponseData
+ * @property {string} token - The authentication token returned after a successful login.
+ */
 interface LoginResponseData {
   token: string;
 }
 
+/**
+ * LoginForm component for user authentication.
+ * 
+ * This component allows users to log in by providing their email and password.
+ * It handles form submission, validation, and error display.
+ * 
+ * @component
+ * @returns {JSX.Element} The rendered LoginForm component.
+ */
 function LoginForm() {
   let [cookies, setCookie, removeCookie] = useCookies(['jwtToken']);
   let [email, setEmail] = React.useState<string>('');
@@ -18,6 +33,7 @@ function LoginForm() {
 
   const [emailError, setEmailError] = React.useState<string>('');
   const [passwordError, setPasswordError] = React.useState<string>('');
+  const [error, setError] = React.useState<string>('');
 
   const onSubmitClick = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
@@ -50,7 +66,7 @@ function LoginForm() {
           });
         }
         else {
-          // Coś tu chyba powinno sie znajdować
+          setError('Błędne dane logowania');
         }
       }).catch((error) => {
         console.log(error);
@@ -84,6 +100,7 @@ function LoginForm() {
                   <Form.Control type="password" onChange={e => setPassword(e.target.value)} required />
                   {passwordError.length > 0 && <Form.Text className='text-danger'>{passwordError}</Form.Text>}
                 </Form.Group>
+                {error.length > 0 && <Form.Text className='text-danger'>{error}</Form.Text>}
                 <Form.Group className='mb-3'>
                   <Form.Check type="checkbox" label="Zapamietaj mnie" id='rememberme' onChange={e => setRememberMe(e.target.checked)} checked={rememberMe}/>
                 </Form.Group>

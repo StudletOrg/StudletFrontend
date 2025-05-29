@@ -28,6 +28,18 @@ function About() {
   );
 }
 
+/**
+ * A component that sets and manages the font size using cookies and renders the application routes.
+ *
+ * This component utilizes `react-cookie` to manage a cookie called 'fontSize'. If the cookie is not set,
+ * it initializes the font size to 'normal' and sets an expiration date of one year from the current date.
+ * The font size is applied as a class to the main container div.
+ *
+ * The component defines several routes for the application using `react-router-dom`.
+ *
+ * @returns {JSX.Element} A container with font size management and application routes.
+ */
+
 function Container() {
   const [style, setStyle, removeCookie] = useCookies(['fontSize']);
   const fontSize = style.fontSize as FontSizeType | undefined;

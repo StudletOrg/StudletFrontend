@@ -4,12 +4,29 @@ import { Container, Card, Col, Row, ListGroup } from "react-bootstrap";
 import AppNavbar from "./AppNavbar";
 import SideMenu from "./SideMenu";
 
+/**
+ * Interface representing a professor's details.
+ * 
+ * @interface Professor
+ * @property {string} firstName - The first name of the professor.
+ * @property {string} lastName - The last name of the professor.
+ * @property {string} email - The email address of the professor.
+ */
 interface Professor {
   firstName: string;
   lastName: string;
   email: string;
 }
 
+/**
+ * Interface representing a student group's details.
+ * 
+ * @interface StudentGroup
+ * @property {string} groupNumber - The number of the student group.
+ * @property {Professor} professor - The professor assigned to the group.
+ * @property {number} studentCount - The number of students in the group.
+ * @property {string} subject - The subject of the group.
+ */
 interface StudentGroup {
   groupNumber: string;
   professor: Professor;
@@ -17,6 +34,17 @@ interface StudentGroup {
   subject: string;
 }
 
+/**
+ * StudentGroups component that displays the groups a student is assigned to.
+ * 
+ * This component fetches and displays the student's groups, including details 
+ * about the group number, professor, and student count. It handles loading 
+ * states and displays a message if no groups are found.
+ * 
+ * @component
+ * @returns {JSX.Element} The rendered StudentGroups component, which shows 
+ *                        the student's assigned groups.
+ */
 function StudentGroups() {
   const [groups, setGroups] = useState<StudentGroup[]>([]);
   const [loading, setLoading] = useState(true);

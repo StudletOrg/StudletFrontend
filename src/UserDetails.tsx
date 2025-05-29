@@ -4,6 +4,16 @@ import { Container, Card, Col, Row, ListGroup } from "react-bootstrap";
 import AppNavbar from "./AppNavbar";
 import SideMenu from "./SideMenu";
 
+/**
+ * Represents a student user.
+ * @interface Student
+ * @property {number} id - The unique identifier for the student.
+ * @property {string} firstname - The first name of the student.
+ * @property {string} lastname - The last name of the student.
+ * @property {string} email - The email address of the student.
+ * @property {string} dateofbirth - The date of birth of the student as a string.
+ * @property {string[]} roles - An array of roles assigned to the student.
+ */
 export interface Student {
   id: number;
   firstname: string;
@@ -13,6 +23,15 @@ export interface Student {
   roles: string[];
 }
 
+/**
+ * A component that displays the details of the current user (student).
+ * 
+ * This component fetches the current user's data from an API and displays
+ * the user's details including ID, name, date of birth, email, and roles.
+ * 
+ * @component
+ * @returns {JSX.Element} The rendered UserDetails component.
+ */
 function UserDetails() {
   const [student, setStudent] = useState<Student | null>(null);
   const [loading, setLoading] = useState(true);

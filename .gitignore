@@ -182,3 +182,4 @@ yarn-error.log*
 
 # Doxygen
 /docs
+/temp-docs

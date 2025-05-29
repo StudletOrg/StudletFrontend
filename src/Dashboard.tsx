@@ -7,7 +7,7 @@ import { Grade } from "./model/Grade";
 import FontSizeChanger, { FontSizeType } from "./FontSizeChanger";
 import axios from 'axios';
 import { Link } from "react-router-dom";
-import AppNavbar, { Student } from "./AppNavbar";
+import AppNavbar, { ThisStudent } from "./AppNavbar";
 import SideMenu from "./SideMenu";
 import { useCookies } from "react-cookie";
 

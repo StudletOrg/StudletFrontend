@@ -4,14 +4,27 @@ import axios from "axios";
 import { Container, Card, Col, Row, Button, ListGroup, Alert, Form } from "react-bootstrap";
 import AppNavbar from "./AppNavbar";
 import SideMenu from "./SideMenu";
+import { Student } from "./model/Student";
 
-interface Student {
-  id: number;
-  firstname: string;
-  lastname: string;
-  email: string;
-}
-
+/**
+ * A React component for adding a student to a specific group.
+ * 
+ * This component retrieves the group ID and field of study ID from the URL parameters,
+ * allows the user to search for students by name, last name and email, and submits the selected
+ * student to the server to be added to the group.
+ * It handles success and error messages based on the submission result.
+ * 
+ * @component
+ * @returns {JSX.Element} The rendered component.
+ * 
+ * @state {string | null} message - A message indicating successful student addition, or null if no message.
+ * @state {string | null} error - A message indicating an error during student addition, or null if no message.
+ * @state {Student[]} students - An array of students to be displayed in the list.
+ * @state {string} filterText - The text entered by the user to filter the student list.
+ * 
+ * @param {string} groupId - The ID of the group retrieved from the URL parameters.
+ * @param {string} fieldOfStudyId - The ID of the field of study retrieved from the URL parameters.
+ */
 function AddStudentToGroup() {
   const [searchParams] = useSearchParams();
   const groupId = searchParams.get("groupId");

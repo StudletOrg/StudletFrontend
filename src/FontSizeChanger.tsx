@@ -1,13 +1,39 @@
 import { Button, ButtonGroup } from "react-bootstrap";
 import { useCookies } from "react-cookie";
 
+/**
+ * Represents the available font size options.
+ * 
+ * @typedef {("normal" | "large" | "extralarge")} FontSizeType
+ * 
+ * @property {string} normal - Represents the normal font size.
+ * @property {string} large - Represents a larger font size.
+ * @property {string} extralarge - Represents an extra-large font size.
+ */
 export type FontSizeType = "normal" | "large" | "extralarge";
 
+/**
+ * Props for the FontSizeChanger component.
+ * 
+ * @interface FontSizeChangerProps
+ * @property {React.CSSProperties} [style] - An optional inline style object to apply to the component.
+ * @property {string} [className] - An optional CSS class name to apply to the component for styling.
+ */
 interface FontSizeChangerProps {
   style?: React.CSSProperties;
   className?: string;
 }
 
+/**
+ * A React component for changing the font size of the application.
+ * 
+ * This component allows users to select a font size from three options: normal, large, and extra-large.
+ * The selected font size is stored in a cookie, which persists across sessions.
+ * 
+ * @component
+ * @param {FontSizeChangerProps} props - The properties for the FontSizeChanger component.
+ * @returns {JSX.Element} The rendered font size changer component.
+ */
 export default function FontSizeChanger(props: FontSizeChangerProps) {
   const [fontSizeCookie, setFontSizeCookie, removeFontSizeCookie] = useCookies(['fontSize']);
   if (fontSizeCookie === undefined) {

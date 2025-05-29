@@ -5,6 +5,20 @@ import { Button, ButtonGroup, Card, CardBody, Col, Container, Form, InputGroup, 
 import { emailRegex, passwordRegex } from "./Validation";
 import axios from "axios";
 
+/**
+ * Interface representing the data required for user registration.
+ * 
+ * This interface defines the structure of the registration data, 
+ * including personal information and account credentials.
+ * 
+ * @interface RegisterData
+ * @property {string} firstName - The first name of the user.
+ * @property {string} lastName - The last name of the user.
+ * @property {string} email - The email address of the user.
+ * @property {string} password - The password chosen by the user.
+ * @property {string} confirmPassword - The password confirmation for validation.
+ * @property {RoleType} role - The role assigned to the user (e.g., student, teacher, moderator).
+ */
 export interface RegisterData {
   firstName: string;
   lastName: string;
@@ -14,13 +28,36 @@ export interface RegisterData {
   role: RoleType;
 };
 
+/**
+ * Type representing the props for the RegisterForm component.
+ * 
+ * @typedef {Object} RegisterFormProps
+ * @property {(data: RegisterData) => void} [onRegister] - Callback function to handle registration.
+ * @property {() => void} [onCancel] - Callback function to handle cancellation of the registration.
+ */
 export type RegisterFormProps = {
   onRegister?: (data: RegisterData) => void;
   onCancel?: () => void;
 };
 
+/**
+ * Type representing the possible roles for a user.
+ * 
+ * @typedef {"student" | "teacher" | "moderator"} RoleType
+ */
 export type RoleType = "student" | "teacher" | "moderator";
 
+/**
+ * RegisterForm component for user registration.
+ * 
+ * This component provides a form for users to register by entering their 
+ * personal information and account credentials. It includes validation 
+ * for the input fields and handles form submission.
+ * 
+ * @component
+ * @param {RegisterFormProps} props - The props for the RegisterForm component.
+ * @returns {JSX.Element} The rendered RegisterForm component.
+ */
 function RegisterForm({ onRegister, onCancel }: RegisterFormProps) {
   const [firstnameError, setFirstnameError] = React.useState<string>('');
   const [lastnameError, setLastnameError] = React.useState<string>('');

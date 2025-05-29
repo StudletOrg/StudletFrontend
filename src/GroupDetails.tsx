@@ -13,6 +13,17 @@ import {
 import AppNavbar from './AppNavbar';
 import SideMenu from './SideMenu';
 
+/**
+ * GroupDetails component that displays information about a specific group.
+ * 
+ * This component fetches and displays details of a group, including the group ID,
+ * number of students, subject, professor information, grades, and announcements.
+ * It handles loading states and error handling for API requests.
+ * 
+ * @component
+ * @returns {JSX.Element} The rendered GroupDetails component, which shows group 
+ *                        information, grades, and announcements.
+ */
 function GroupDetails() {
   const { groupId } = useParams();
   const [group, setGroup] = useState<Group | null>(null);

@@ -5,12 +5,28 @@ import AppNavbar from './AppNavbar';
 import SideMenu from './SideMenu';
 import { useNavigate } from 'react-router-dom';
 
+
+/**
+ * Represents a grade for a student.
+ * @interface Grade
+ * @property {number} id - The unique identifier for the grade.
+ * @property {string} subject - The subject for which the grade is given.
+ * @property {number} grade - The value of the grade.
+ */
 interface Grade {
   id: number;
   subject: string;
   grade: number;
 }
 
+/**
+ * Represents a student.
+ * @interface Student
+ * @property {number} id - The unique identifier for the student.
+ * @property {string} firstname - The first name of the student.
+ * @property {string} lastname - The last name of the student.
+ * @property {string} email - The email address of the student.
+ */
 interface Student {
   id: number;
   firstname: string;
@@ -18,17 +34,39 @@ interface Student {
   email: string;
 }
 
+/**
+ * Represents a student along with their grades.
+ * @interface StudentGrades
+ * @property {Student} student - The student object.
+ * @property {Grade[]} grades - An array of grades associated with the student.
+ */
 interface StudentGrades {
   student: Student;
   grades: Grade[];
 }
 
+/**
+ * Represents a group of students.
+ * @interface Group
+ * @property {number} id - The unique identifier for the group.
+ * @property {number} numer - The number of the group.
+ * @property {string} name - The name of the group.
+ */
 interface Group {
   id: number;
   numer: number;
   name: string;
 }
 
+/**
+ * A component that displays the grades of students in selected groups.
+ * 
+ * This component fetches groups and their associated students with grades from an API.
+ * It allows teachers to view, add, edit, and remove grades for students.
+ * 
+ * @component
+ * @returns {JSX.Element} The rendered TeacherGrades component.
+ */
 export default function TeacherGrades() {
   const [groups, setGroups] = useState<Group[]>([]);
   const [selectedGroupId, setSelectedGroupId] = useState<number | null>(null);

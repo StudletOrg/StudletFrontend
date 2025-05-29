@@ -4,11 +4,39 @@ import { Container, Card, Col, Row, Form, Button, Alert } from "react-bootstrap"
 import AppNavbar from "./AppNavbar";
 import SideMenu from "./SideMenu";
 
+/**
+ * Represents a group with an identifier and a name.
+ * 
+ * @interface Group
+ * @property {number} id - The unique identifier for the group.
+ * @property {string} name - The name of the group.
+ */
 interface Group {
   id: number;
   name: string;
 }
 
+/**
+ * A React component for creating a new note for a specific group.
+ * 
+ * This component retrieves the group ID from the URL parameters,
+ * allows the user to enter a title and content for the note, and submits the note to the server.
+ * It handles success and error messages based on the submission result.
+ * 
+ * @component
+ * @returns {JSX.Element} The rendered component.
+ * 
+ * @example
+ * // Usage
+ * <CreateNote />
+ * 
+ * @state {string} title - The title of the note, which can be an empty string.
+ * @state {string} content - The content of the note, which can be an empty string.
+ * @state {Group[]} groups - The list of groups associated with the user.
+ * @state {number | null} selectedGroupId - The ID of the selected group, which can be null.
+ * @state {string | null} success - A message indicating successful note creation, or null if no message.
+ * @state {string | null} error - A message indicating an error during note creation, or null if no message.
+ */
 function CreateNote() {
   const [title, setTitle] = useState("");
   const [content, setContent] = useState("");

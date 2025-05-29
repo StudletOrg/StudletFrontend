@@ -4,12 +4,31 @@ import { Container, Card, Col, Row, ListGroup } from "react-bootstrap";
 import AppNavbar from "./AppNavbar";
 import SideMenu from "./SideMenu";
 
+/**
+ * Represents a grade assigned to a student in a specific group.
+ * 
+ * @interface Grade
+ * @property {number} id - The unique identifier for the grade.
+ * @property {number} value - The numerical value of the grade.
+ * @property {number} group - The identifier of the group to which the grade is associated.
+ */
 interface Grade {
   id: number;
   value: number;
   group: number;
 }
 
+/**
+ * Represents a student with personal information and roles.
+ * 
+ * @interface Student
+ * @property {number} id - The unique identifier for the student.
+ * @property {string} firstname - The first name of the student.
+ * @property {string} lastname - The last name of the student.
+ * @property {string} email - The email address of the student.
+ * @property {string} dateofbirth - The date of birth of the student in ISO 8601 format (YYYY-MM-DD).
+ * @property {string[]} roles - An array of roles assigned to the student (e.g., ["student", "member"]).
+ */
 interface Student {
   id: number;
   firstname: string;
@@ -19,6 +38,15 @@ interface Student {
   roles: string[];
 }
 
+/**
+ * A React component that displays all grades for the current student.
+ * 
+ * This component fetches the current user's data and their associated grades from the API.
+ * It groups the grades by their respective group IDs and displays them in a structured format.
+ * 
+ * @component
+ * @returns {JSX.Element} The rendered component displaying the student's grades.
+ */
 function AllGrades() {
   const [student, setStudent] = useState<Student | null>(null);
   const [grades, setGrades] = useState<Grade[]>([]);

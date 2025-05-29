@@ -5,6 +5,27 @@ import AppNavbar from "./AppNavbar";
 import SideMenu from "./SideMenu";
 import { useParams } from "react-router-dom";
 
+/**
+ * A React component for adding a grade for a specific student in a specific group.
+ * 
+ * This component retrieves the group ID and student ID from the URL parameters,
+ * allows the user to select a grade from a dropdown, and submits the grade to the server.
+ * It handles success and error messages based on the submission result.
+ * 
+ * @component
+ * @returns {JSX.Element} The rendered component.
+ * 
+ * @example
+ * // Usage
+ * <AddGrade />
+ * 
+ * @state {number | ""} gradeValue - The selected grade value, which can be a number or an empty string.
+ * @state {string | null} success - A message indicating successful grade addition, or null if no message.
+ * @state {string | null} error - A message indicating an error during grade addition, or null if no message.
+ * 
+ * @param {string} groupId - The ID of the group retrieved from the URL parameters.
+ * @param {string} studentId - The ID of the student retrieved from the URL parameters.
+ */
 function AddGrade() {
   const { groupId, studentId } = useParams();
   const [gradeValue, setGradeValue] = useState<number | "">("");
