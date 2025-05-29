@@ -51,6 +51,7 @@ npm start
 
 This will start the development server and open the app in a browser.
 
+\newpage
 
 # Table of Contents
 
@@ -197,6 +198,8 @@ This will start the development server and open the app in a browser.
 - [studlet v0.1.0](#studlet-v010)
   - [Documents](#documents-1)
   - [Modules](#modules)
+
+\newpage
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
