@@ -1,6 +1,5 @@
 {
   "entryPoints": ["src/index.tsx", "src/**/*.tsx", "src/**/*.ts"], // Entry point of your React app
-  "projectDocuments": ["README.md"],
   "out": "docs", // Output directory for the generated documentation
   "includeVersion": true, // Include version in the documentation
   "exclude": ["**/*.spec.ts", "**/*.test.ts", "src/react-app-env.d.ts", "src/setupTests.ts", "src/reportWebVitals.ts"], // Exclude test files
