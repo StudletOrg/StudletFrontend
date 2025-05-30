@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import { Container, Card, Col, Row, ListGroup, Spinner } from "react-bootstrap";
+import { Container, Card, Col, Row, ListGroup, Spinner, Button } from "react-bootstrap";
 import AppNavbar from "./AppNavbar";
 import SideMenu from "./SideMenu";
+import { useNavigate } from "react-router-dom";
 
 /**
  * Interface representing a professor's details.
@@ -48,7 +49,7 @@ interface StudentGroup {
 function StudentGroups() {
   const [groups, setGroups] = useState<StudentGroup[]>([]);
   const [loading, setLoading] = useState(true);
-
+  const navigate = useNavigate();
   const token = localStorage.getItem("jwtToken");
 
   useEffect(() => {
@@ -99,6 +100,11 @@ function StudentGroups() {
                         <ListGroup.Item><strong>Profesor:</strong> {group.professor.firstName} {group.professor.lastName} ({group.professor.email})</ListGroup.Item>
                         <ListGroup.Item><strong>Liczba studentów:</strong> {group.studentCount}</ListGroup.Item>
                       </ListGroup>
+                      <div className="mt-3 text-center">
+                        <Button variant="primary" onClick={() => navigate(`/groups/${group.groupNumber}`)}>
+                          Zobacz
+                        </Button>
+                      </div>
                     </div>
                   ))
                 )}

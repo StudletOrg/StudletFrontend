@@ -12,7 +12,7 @@ import { Link, useLocation } from "react-router-dom";
  */
 const defaultMenu  = [
   { path: "/dashboard", label: "Dashboard", icon: "🏠" },
-  { path: "/uczelnia", label: "Uczelnie", icon: "🎓" },
+  { path: "/universities", label: "Uczelnie", icon: "🎓" },
   { path: "/settings", label: "Ustawienia", icon: "⚙️" },
 ];
 
@@ -39,7 +39,7 @@ const studentExtras = [
  */
 const professorExtras = [
   { path: "/teachergradestest", label: "Moje grupy", icon: "👥" },
-  { path: "/teachergradestest", label: "Inne", icon: "📝" },
+  //{ path: "/teachergradestest", label: "Inne", icon: "📝" },
 ];
 
 /**

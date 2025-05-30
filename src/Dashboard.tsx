@@ -102,18 +102,24 @@ function Dashboard() {
         <Col lg={["extralarge", "large"].find(c => c == fontSizeCookie.fontSize) ? 3 : 2} className="bg-light border-end p-3">
           <SideMenu />
         </Col>
-        <Col lg={["extralarge", "large"].find(c => c == fontSizeCookie.fontSize) ? 9 : 10}>
-          <Row>
-            <Col lg={4}>
-              <DashboardLatestGrades grades={grades} />
-            </Col>
-            <Col lg={4}>
-              <DashboardSubjects subjects={subjects} />
-            </Col>
-            <Col lg={4}>
-              <DashboardLatestGrades grades={grades} />
-            </Col>
-          </Row>
+        <Col
+          lg={["extralarge", "large"].includes(fontSizeCookie.fontSize) ? 9 : 10}
+        >
+          {(grades.length === 0 && subjects.length === 0) ? (
+            <h2 className="text-muted text-center">Witaj w Studlecie</h2>
+          ) : (
+            <Row className="w-100">
+              <Col lg={4}>
+                <DashboardLatestGrades grades={grades} />
+              </Col>
+              <Col lg={4}>
+                <DashboardSubjects subjects={subjects} />
+              </Col>
+              <Col lg={4}>
+                <DashboardLatestGrades grades={grades} />
+              </Col>
+            </Row>
+          )}
         </Col>
       </Row>
     </Container>

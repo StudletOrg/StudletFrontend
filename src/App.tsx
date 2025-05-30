@@ -19,6 +19,7 @@ import AddStudentToGroup from './AddStudentToGroup';
 import LoginForm from './LoginForm';
 import EditUserForm from './EditUserForm';
 import CreateGroup from './CreateGroup';
+import UniversitiesPage from './UniversitiesPage';
 
 function About() {
   return (
@@ -68,6 +69,7 @@ function Container() {
         <Route path="/add-student-to-group" element={<AddStudentToGroup />} />
         <Route path="/settings" element={<EditUserForm />} />
         <Route path="/create-group" element={<CreateGroup />} />
+        <Route path="/universities" element={<UniversitiesPage />} />
       </Routes>
     </div>
   );

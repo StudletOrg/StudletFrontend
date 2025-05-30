@@ -70,6 +70,8 @@ interface Group {
 export default function TeacherGrades() {
   const [groups, setGroups] = useState<Group[]>([]);
   const [selectedGroupId, setSelectedGroupId] = useState<number | null>(null);
+  const [selectedGroupName, setSelectedGroupName] = useState<String | null>(null);
+  const [selectedGroupNumber, setSelectedGroupNumber] = useState<number | null>(null);
   const [students, setStudents] = useState<StudentGrades[]>([]);
   const [loadingGroups, setLoadingGroups] = useState(true);
   const [loadingStudents, setLoadingStudents] = useState(false);
@@ -128,7 +130,29 @@ export default function TeacherGrades() {
 
   const handleEditGrade = (studentId: number, gradeIndex: number, updatedGrade: Grade) => {  };
 
-  const handleRemoveGrade = (studentId: number, gradeIndex: number) => {  };
+  const handleRemoveGrade = (studentId: number, gradeIndex: number) => {
+    const gradeId = students
+      .find(s => s.student.id === studentId)
+      ?.grades[gradeIndex].id;
+
+    if (!gradeId) return;
+
+    api.delete(`/api/grade/${gradeId}`)
+      .then(() => {
+        setStudents(prevStudents => 
+          prevStudents.map(s => {
+            if (s.student.id !== studentId) return s;
+            const updatedGrades = [...s.grades];
+            updatedGrades.splice(gradeIndex, 1);
+            return { ...s, grades: updatedGrades };
+          })
+        );
+      })
+      .catch(error => {
+        console.error("Błąd usuwania oceny:", error);
+        alert("Nie udało się usunąć oceny.");
+      });
+  };
 
   const navigate = useNavigate();
 
@@ -164,7 +188,11 @@ export default function TeacherGrades() {
                       bg={selectedGroupId === group.id ? 'primary' : 'light'}
                       text={selectedGroupId === group.id ? 'white' : 'dark'}
                       className="mb-2"
-                      onClick={() => setSelectedGroupId(group.id)}
+                      onClick={() => {
+                        setSelectedGroupId(group.id);
+                        setSelectedGroupName(group.name);
+                        setSelectedGroupNumber(group.numer);
+                      }}
                       style={{ cursor: 'pointer' }}
                     >
                       <Card.Body>
@@ -180,7 +208,7 @@ export default function TeacherGrades() {
               <>
                 <Row className="align-items-center mb-3">
                   <Col>
-                    <h3>Oceny uczniów grupy #{selectedGroupId}</h3>
+                    <h3>{selectedGroupName} - grupa {selectedGroupNumber}</h3>
                   </Col>
                   <Col className="text-end">
                     <Button

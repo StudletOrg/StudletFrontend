@@ -161,7 +161,7 @@ function RegisterForm({ onRegister, onCancel }: RegisterFormProps) {
               <ButtonGroup className="mb-3 w-100">
                 <Button variant={`${role === "student" ? "primary" : "outline-primary"}`} onClick={() => setRole("student")}>Student</Button>
                 <Button variant={`${role === "teacher" ? "primary" : "outline-primary"}`} onClick={() => setRole("teacher")}>Nauczyciel</Button>
-                <Button variant={`${role === "moderator" ? "primary" : "outline-primary"}`} onClick={() => setRole("moderator")}>Moderator</Button>
+                {/*<Button variant={`${role === "moderator" ? "primary" : "outline-primary"}`} onClick={() => setRole("moderator")}>Moderator</Button>*/}
               </ButtonGroup>
               {responseError.length > 0 && <Form.Label className="text-danger">{responseError}</Form.Label>}
               <Container>
