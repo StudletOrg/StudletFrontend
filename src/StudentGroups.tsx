@@ -19,6 +19,11 @@ interface Professor {
   email: string;
 }
 
+interface Attendance {
+  value: number;
+  maksvalue: number;
+}
+
 /**
  * Interface representing a student group's details.
  * 
@@ -33,6 +38,7 @@ interface StudentGroup {
   professor: Professor;
   studentCount: number;
   subject: string;
+  attendance?: Attendance | null;
 }
 
 /**
@@ -99,6 +105,16 @@ function StudentGroups() {
                         <ListGroup.Item><strong>Grupa:</strong> {group.groupNumber}</ListGroup.Item>
                         <ListGroup.Item><strong>Profesor:</strong> {group.professor.firstName} {group.professor.lastName} ({group.professor.email})</ListGroup.Item>
                         <ListGroup.Item><strong>Liczba studentów:</strong> {group.studentCount}</ListGroup.Item>
+                        {group.attendance ? (
+                          <ListGroup.Item>
+                            <strong>Frekwencja:</strong> {group.attendance.value} / {group.attendance.maksvalue} (
+                            {Math.round((group.attendance.value / group.attendance.maksvalue) * 100)}%)
+                          </ListGroup.Item>
+                        ) : (
+                          <ListGroup.Item>
+                            <strong>Frekwencja:</strong> brak danych
+                          </ListGroup.Item>
+                        )}
                       </ListGroup>
                       <div className="mt-3 text-center">
                         <Button variant="primary" onClick={() => navigate(`/groups/${group.groupNumber}`)}>

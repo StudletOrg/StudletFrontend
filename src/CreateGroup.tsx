@@ -43,7 +43,7 @@ function CreateGroup() {
 
     useEffect(() => {
     axios
-        .get(`${process.env.REACT_APP_API_URL}/api/subject-of-instances`, {
+        .get(`${process.env.REACT_APP_API_URL}/api/my-subject-of-instances`, {
         headers: { Authorization: `Bearer ${token}` },
         withCredentials: true,
         })

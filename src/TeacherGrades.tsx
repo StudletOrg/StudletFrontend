@@ -34,6 +34,11 @@ interface Student {
   email: string;
 }
 
+interface Attendance {
+  value: number;
+  maksvalue: number;
+}
+
 /**
  * Represents a student along with their grades.
  * @interface StudentGrades
@@ -43,6 +48,7 @@ interface Student {
 interface StudentGrades {
   student: Student;
   grades: Grade[];
+  attendance?: Attendance;
 }
 
 /**
@@ -115,7 +121,11 @@ export default function TeacherGrades() {
             id: grade.id,
             subject: grade.subject,
             grade: grade.value
-          }))
+          })),
+          attendance: student.attendance ? {
+            value: student.attendance.value,
+            maksvalue: student.attendance.maksvalue,
+          } : undefined
         }));
         setStudents(mappedData);
         setLoadingStudents(false);
@@ -230,7 +240,7 @@ export default function TeacherGrades() {
                   <Spinner animation="border" />
                 ) : (
                   <Row xs={1} md={2} lg={3} className="g-4">
-                    {students.map(({ student, grades }, studentIndex) => (
+                    {students.map(({ student, grades, attendance }, studentIndex) => (
                       <Col key={studentIndex}>
                         <Card>
                           <Card.Header>
@@ -276,6 +286,17 @@ export default function TeacherGrades() {
                             >
                               Dodaj
                             </Button>
+                            {attendance && (
+                              <div className="mt-3 d-flex align-items-center justify-content-between">
+                                <span>
+                                  Frekwencja: {attendance.value}/{attendance.maksvalue}
+                                </span>
+                                <div>
+                                  <Button variant="outline-success" size="sm" className="me-2">+</Button>
+                                  <Button variant="outline-danger" size="sm">-</Button>
+                                </div>
+                              </div>
+                            )}
                           </Card.Body>
                         </Card>
                       </Col>
