@@ -20,6 +20,8 @@ import LoginForm from './LoginForm';
 import EditUserForm from './EditUserForm';
 import CreateGroup from './CreateGroup';
 import UniversitiesPage from './UniversitiesPage';
+import FieldOfStudyDetails from './FieldOfStudyDetails';
+import SubjectDetails from './SubjectDetails';
 
 function About() {
   return (
@@ -70,6 +72,8 @@ function Container() {
         <Route path="/settings" element={<EditUserForm />} />
         <Route path="/create-group" element={<CreateGroup />} />
         <Route path="/universities" element={<UniversitiesPage />} />
+        <Route path="/fields/:fieldId" element={<FieldOfStudyDetails />} />
+        <Route path="/subjects/:subjectId" element={<SubjectDetails />} />
       </Routes>
     </div>
   );
