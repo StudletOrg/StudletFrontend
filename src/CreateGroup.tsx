@@ -12,10 +12,23 @@ import {
 import AppNavbar from "./AppNavbar";
 import SideMenu from "./SideMenu";
 
+
 /**
- * Komponent do tworzenia nowej grupy przez profesora.
+ * A React component for creating a new group of students.
+ * This component retrieves the list of subjects and their instances from the server,
+ * allows the user to select a subject instance and one or more students, and submits the selected
+ * data to the server to be added to the group.
+ * It handles success and error messages based on the submission result.
  *
  * @component
+ * @returns {JSX.Element} The rendered component.
+ *
+ * @state {string} numer - The number of the group to be created.
+ * @state {number | ""} subjectInstanceId - The identifier of the subject instance to which the group is associated.
+ * @state {number[]} studentIds - An array of identifiers of the students to be added to the group.
+ * @state {string | null} success - A message indicating successful group creation, or null if no message.
+ * @state {string | null} error - A message indicating an error during group creation, or null if no message.
+ * @param {string} token - The user's JWT token for authentication.
  */
 function CreateGroup() {
   const [numer, setNumer] = useState("");

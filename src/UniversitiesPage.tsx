@@ -50,6 +50,18 @@ interface University {
 }
 
 
+/**
+ * A React component that displays a list of all universities from the API.
+ * 
+ * It fetches the list of universities on mount and displays them in a table.
+ * Each table row represents a single university with its name, address, and a
+ * button to manage the university if the user is the rector of that university.
+ * 
+ * The component also renders a side menu with navigation links.
+ * 
+ * @component
+ * @returns {JSX.Element} The rendered UniversitiesPage component.
+ */
 export default function UniversitiesPage() {
   const [universities, setUniversities] = useState<University[]>([]);
   const [loading, setLoading] = useState(true);
