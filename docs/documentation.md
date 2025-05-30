@@ -1,13 +1,13 @@
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 
-![banner](Baner5.jpg)
+![Banner](Baner5.jpg){ width=100% }
 
-# Studlet Frontend
+# Studlet Frontend Documentation
 
-This is a React frontend for the Studlet application. It is built with TypeScript programming language and Create React App script. Also it uses  uses `react-router` for client-side routing `bootstrap` for styling and `react-bootstrap` for bootstrap components in React, and `axios` for HTTP requests, and `react-cookie` for handling cookies.
+This is a React frontend for the Studlet application. It is built with [TypeScript](https://www.typescriptlang.org/) programming language and Create React App script. Also it uses [react-router-dom](https://www.npmjs.com/package/react-router-dom) for client-side routing [bootstrap](https://getbootstrap.com/) for styling and [react-bootstrap](https://www.npmjs.com/package/react-bootstrap) for bootstrap components in React, and [axios](https://www.npmjs.com/package/axios) for HTTP requests, and [react-cookie](https://www.npmjs.com/package/react-cookie) for handling cookies.
 
-Documentation is generated using [typedoc](https://typedoc.org/) and [typedoc-plugin-markdown](https://github.com/TypeStrong/typedoc-plugin-markdown). And then it is merged using [concat-md](https://github.com/TypeStrong/concat-md) and [pandoc](https://pandoc.org/) to convert it to a pdf file.
+Documentation is generated using [typedoc](https://typedoc.org/) and [typedoc-plugin-markdown](https://www.npmjs.com/package/typedoc-plugin-markdown). And then it is merged using [concat-md](https://www.npmjs.com/package/concat-md) and [pandoc](https://pandoc.org/) to convert it to a pdf file.
 
 ## Project members
 
@@ -21,11 +21,11 @@ The project is organized as follows:
 
 - `public/`: static resources, such as images and the favicon
 - `src/`: the source code for the frontend
-    - `img/`: folder with images used by the typescript code
-	- `model/`: data models for the app
-	- `App.tsx`: the main application component
-	- `index.tsx`: the entry point for the app
-    - `*.tsx`: other TypeScript files in the src directory with components
+  - `img/`: folder with images used by the typescript code
+  - `model/`: data models for the app
+  - `App.tsx`: the main application component
+  - `index.tsx`: the entry point for the app
+  - `*.tsx`: other TypeScript files in the src directory with components
 - `.env`: environment variables for the app (see below)
 
 ## Cloning the Repository
@@ -86,124 +86,129 @@ This will start the development server and open the app in a browser.
     - [Function: default()](#function-default-3)
   - [Interfaces](#interfaces)
     - [Interface: ThisStudent](#interface-thisstudent)
-- [Create Note](#create-note)
-  - [CreateNote](#createnote)
+- [Create Group](#create-group)
+  - [CreateGroup](#creategroup)
     - [Index](#index-4)
   - [Functions](#functions-4)
     - [Function: default()](#function-default-4)
-- [Dashboard](#dashboard)
-  - [Dashboard](#dashboard-1)
+- [Create Note](#create-note)
+  - [CreateNote](#createnote)
     - [Index](#index-5)
   - [Functions](#functions-5)
     - [Function: default()](#function-default-5)
+- [Dashboard](#dashboard)
+  - [Dashboard](#dashboard-1)
+    - [Index](#index-6)
+  - [Functions](#functions-6)
+    - [Function: default()](#function-default-6)
   - [Interfaces](#interfaces-1)
     - [Interface: DashboardSubjectsProp](#interface-dashboardsubjectsprop)
     - [Interface: Subject](#interface-subject)
 - [Dashboard Card](#dashboard-card)
   - [DashboardCard](#dashboardcard)
-    - [Index](#index-6)
-  - [Functions](#functions-6)
-    - [Function: default()](#function-default-6)
-- [Error](#error)
-  - [Error](#error-1)
     - [Index](#index-7)
   - [Functions](#functions-7)
     - [Function: default()](#function-default-7)
-- [Font Size Changer](#font-size-changer)
-  - [FontSizeChanger](#fontsizechanger)
+- [Edit User Form](#edit-user-form)
+  - [EditUserForm](#edituserform)
     - [Index](#index-8)
   - [Functions](#functions-8)
     - [Function: default()](#function-default-8)
+  - [Interfaces](#interfaces-2)
+    - [Interface: Student](#interface-student)
+- [Error](#error)
+  - [Error](#error-1)
+    - [Index](#index-9)
+  - [Functions](#functions-9)
+    - [Function: default()](#function-default-9)
+- [Font Size Changer](#font-size-changer)
+  - [FontSizeChanger](#fontsizechanger)
+    - [Index](#index-10)
+  - [Functions](#functions-10)
+    - [Function: default()](#function-default-10)
   - [Type Aliases](#type-aliases)
     - [Type Alias: FontSizeType](#type-alias-fontsizetype)
 - [Grades](#grades)
   - [Grades](#grades-1)
-    - [Index](#index-9)
-  - [Functions](#functions-9)
-    - [Function: default()](#function-default-9)
-- [Group Details](#group-details)
-  - [GroupDetails](#groupdetails)
-    - [Index](#index-10)
-  - [Functions](#functions-10)
-    - [Function: default()](#function-default-10)
-- [Home](#home)
-  - [Home](#home-1)
     - [Index](#index-11)
   - [Functions](#functions-11)
     - [Function: default()](#function-default-11)
-- [Login Form](#login-form)
-  - [LoginForm](#loginform)
+- [Group Details](#group-details)
+  - [GroupDetails](#groupdetails)
     - [Index](#index-12)
   - [Functions](#functions-12)
     - [Function: default()](#function-default-12)
-- [Logo](#logo)
-  - [Logo](#logo-1)
+- [Home](#home)
+  - [Home](#home-1)
     - [Index](#index-13)
   - [Functions](#functions-13)
     - [Function: default()](#function-default-13)
-- [Studlet Frontend](#studlet-frontend)
-  - [Folder Structure](#folder-structure)
-  - [Cloning the Repository](#cloning-the-repository)
-  - [Environment Variables](#environment-variables)
-  - [Running the App](#running-the-app)
-- [Register Form](#register-form)
-  - [RegisterForm](#registerform)
+- [Login Form](#login-form)
+  - [LoginForm](#loginform)
     - [Index](#index-14)
   - [Functions](#functions-14)
     - [Function: default()](#function-default-14)
-  - [Interfaces](#interfaces-2)
+- [Logo](#logo)
+  - [Logo](#logo-1)
+    - [Index](#index-15)
+  - [Functions](#functions-15)
+    - [Function: default()](#function-default-15)
+- [Register Form](#register-form)
+  - [RegisterForm](#registerform)
+    - [Index](#index-16)
+  - [Functions](#functions-16)
+    - [Function: default()](#function-default-16)
+  - [Interfaces](#interfaces-3)
     - [Interface: RegisterData](#interface-registerdata)
   - [Type Aliases](#type-aliases-1)
     - [Type Alias: RegisterFormProps](#type-alias-registerformprops)
     - [Type Alias: RoleType](#type-alias-roletype)
 - [Side Menu](#side-menu)
   - [SideMenu](#sidemenu)
-    - [Index](#index-15)
-  - [Functions](#functions-15)
-    - [Function: default()](#function-default-15)
-- [Student Groups](#student-groups)
-  - [StudentGroups](#studentgroups)
-    - [Index](#index-16)
-  - [Functions](#functions-16)
-    - [Function: default()](#function-default-16)
-- [Teacher Grades](#teacher-grades)
-  - [TeacherGrades](#teachergrades)
     - [Index](#index-17)
   - [Functions](#functions-17)
     - [Function: default()](#function-default-17)
-- [User Details](#user-details)
-  - [UserDetails](#userdetails)
+- [Student Groups](#student-groups)
+  - [StudentGroups](#studentgroups)
     - [Index](#index-18)
   - [Functions](#functions-18)
     - [Function: default()](#function-default-18)
-  - [Interfaces](#interfaces-3)
-    - [Interface: Student](#interface-student)
+- [Teacher Grades](#teacher-grades)
+  - [TeacherGrades](#teachergrades)
+    - [Index](#index-19)
+  - [Functions](#functions-19)
+    - [Function: default()](#function-default-19)
+- [Universities Page](#universities-page)
+  - [UniversitiesPage](#universitiespage)
+    - [Index](#index-20)
+  - [Functions](#functions-20)
+    - [Function: default()](#function-default-20)
+- [User Details](#user-details)
+  - [UserDetails](#userdetails)
+    - [Index](#index-21)
+  - [Functions](#functions-21)
+    - [Function: default()](#function-default-21)
+  - [Interfaces](#interfaces-4)
+    - [Interface: Student](#interface-student-1)
 - [Validation](#validation)
   - [Validation](#validation-1)
-    - [Index](#index-19)
+    - [Index](#index-22)
   - [Variables](#variables)
     - [Variable: emailRegex](#variable-emailregex)
     - [Variable: passwordRegex](#variable-passwordregex)
-- [Documents](#documents)
-  - [Studlet Frontend](#studlet-frontend-1)
-    - [Folder Structure](#folder-structure-1)
-    - [Cloning the Repository](#cloning-the-repository-1)
-    - [Environment Variables](#environment-variables-1)
-    - [Running the App](#running-the-app-1)
-- [Index](#index-20)
+- [Index](#index-23)
   - [index](#index)
 - [Model](#model)
   - [Grade](#grade)
     - [model/Grade](#modelgrade)
-    - [Interfaces](#interfaces-4)
+    - [Interfaces](#interfaces-5)
   - [Group](#group)
     - [model/Group](#modelgroup)
-    - [Interfaces](#interfaces-5)
+    - [Interfaces](#interfaces-6)
   - [Student](#student)
     - [model/Student](#modelstudent)
-    - [Interfaces](#interfaces-6)
+    - [Interfaces](#interfaces-7)
 - [studlet v0.1.0](#studlet-v010)
-  - [Documents](#documents-1)
   - [Modules](#modules)
 
 \newpage
@@ -215,7 +220,7 @@ This will start the development server and open the app in a browser.
 
 <a name="addgradereadmemd"></a>
 
-[**studlet v0.1.0**](#readmemd) • **Docs**
+[**studlet v0.1.0**](../README.md) • **Docs**
 
 ***
 
@@ -234,7 +239,7 @@ This will start the development server and open the app in a browser.
 
 <a name="addgradefunctionsdefaultmd"></a>
 
-[**studlet v0.1.0**](#readmemd) • **Docs**
+[**studlet v0.1.0**](../../README.md) • **Docs**
 
 ***
 
@@ -279,14 +284,14 @@ error - A message indicating an error during grade addition, or null if no messa
 
 #### Defined in
 
-[src/AddGrade.tsx:29](https://github.com/StudletOrg/StudletFrontend/blob/724c01c07762c8985a8ada77613a875789478613/src/AddGrade.tsx#L29)
+[src/AddGrade.tsx:29](https://github.com/StudletOrg/StudletFrontend/blob/8ce6f77c494f2de7ffedb51fa531b958d3d3c465/src/AddGrade.tsx#L29)
 
 # Add Student To Group
 
 
 <a name="addstudenttogroupreadmemd"></a>
 
-[**studlet v0.1.0**](#readmemd) • **Docs**
+[**studlet v0.1.0**](../README.md) • **Docs**
 
 ***
 
@@ -305,7 +310,7 @@ error - A message indicating an error during grade addition, or null if no messa
 
 <a name="addstudenttogroupfunctionsdefaultmd"></a>
 
-[**studlet v0.1.0**](#readmemd) • **Docs**
+[**studlet v0.1.0**](../../README.md) • **Docs**
 
 ***
 
@@ -348,14 +353,14 @@ filterText - The text entered by the user to filter the student list.
 
 #### Defined in
 
-[src/AddStudentToGroup.tsx:28](https://github.com/StudletOrg/StudletFrontend/blob/724c01c07762c8985a8ada77613a875789478613/src/AddStudentToGroup.tsx#L28)
+[src/AddStudentToGroup.tsx:28](https://github.com/StudletOrg/StudletFrontend/blob/8ce6f77c494f2de7ffedb51fa531b958d3d3c465/src/AddStudentToGroup.tsx#L28)
 
 # App Test
 
 
 <a name="apptestreadmemd"></a>
 
-[**studlet v0.1.0**](#readmemd) • **Docs**
+[**studlet v0.1.0**](../README.md) • **Docs**
 
 ***
 
@@ -368,7 +373,7 @@ filterText - The text entered by the user to filter the student list.
 
 <a name="appreadmemd"></a>
 
-[**studlet v0.1.0**](#readmemd) • **Docs**
+[**studlet v0.1.0**](../README.md) • **Docs**
 
 ***
 
@@ -387,7 +392,7 @@ filterText - The text entered by the user to filter the student list.
 
 <a name="appfunctionsdefaultmd"></a>
 
-[**studlet v0.1.0**](#readmemd) • **Docs**
+[**studlet v0.1.0**](../../README.md) • **Docs**
 
 ***
 
@@ -410,14 +415,14 @@ The main application component.
 
 #### Defined in
 
-[src/App.tsx:79](https://github.com/StudletOrg/StudletFrontend/blob/724c01c07762c8985a8ada77613a875789478613/src/App.tsx#L79)
+[src/App.tsx:87](https://github.com/StudletOrg/StudletFrontend/blob/8ce6f77c494f2de7ffedb51fa531b958d3d3c465/src/App.tsx#L87)
 
 # App Navbar
 
 
 <a name="appnavbarreadmemd"></a>
 
-[**studlet v0.1.0**](#readmemd) • **Docs**
+[**studlet v0.1.0**](../README.md) • **Docs**
 
 ***
 
@@ -440,7 +445,7 @@ The main application component.
 
 <a name="appnavbarfunctionsdefaultmd"></a>
 
-[**studlet v0.1.0**](#readmemd) • **Docs**
+[**studlet v0.1.0**](../../README.md) • **Docs**
 
 ***
 
@@ -473,14 +478,14 @@ A navigation bar React element.
 
 #### Defined in
 
-[src/AppNavbar.tsx:55](https://github.com/StudletOrg/StudletFrontend/blob/724c01c07762c8985a8ada77613a875789478613/src/AppNavbar.tsx#L55)
+[src/AppNavbar.tsx:55](https://github.com/StudletOrg/StudletFrontend/blob/8ce6f77c494f2de7ffedb51fa531b958d3d3c465/src/AppNavbar.tsx#L55)
 
 ## Interfaces
 
 
 <a name="appnavbarinterfacesthisstudentmd"></a>
 
-[**studlet v0.1.0**](#readmemd) • **Docs**
+[**studlet v0.1.0**](../../README.md) • **Docs**
 
 ***
 
@@ -502,7 +507,7 @@ The date of birth of the student.
 
 ###### Defined in
 
-[src/AppNavbar.tsx:36](https://github.com/StudletOrg/StudletFrontend/blob/724c01c07762c8985a8ada77613a875789478613/src/AppNavbar.tsx#L36)
+[src/AppNavbar.tsx:36](https://github.com/StudletOrg/StudletFrontend/blob/8ce6f77c494f2de7ffedb51fa531b958d3d3c465/src/AppNavbar.tsx#L36)
 
 ***
 
@@ -514,7 +519,7 @@ The email address of the student.
 
 ###### Defined in
 
-[src/AppNavbar.tsx:35](https://github.com/StudletOrg/StudletFrontend/blob/724c01c07762c8985a8ada77613a875789478613/src/AppNavbar.tsx#L35)
+[src/AppNavbar.tsx:35](https://github.com/StudletOrg/StudletFrontend/blob/8ce6f77c494f2de7ffedb51fa531b958d3d3c465/src/AppNavbar.tsx#L35)
 
 ***
 
@@ -526,7 +531,7 @@ The first name of the student.
 
 ###### Defined in
 
-[src/AppNavbar.tsx:33](https://github.com/StudletOrg/StudletFrontend/blob/724c01c07762c8985a8ada77613a875789478613/src/AppNavbar.tsx#L33)
+[src/AppNavbar.tsx:33](https://github.com/StudletOrg/StudletFrontend/blob/8ce6f77c494f2de7ffedb51fa531b958d3d3c465/src/AppNavbar.tsx#L33)
 
 ***
 
@@ -538,7 +543,7 @@ The unique identifier for the student.
 
 ###### Defined in
 
-[src/AppNavbar.tsx:37](https://github.com/StudletOrg/StudletFrontend/blob/724c01c07762c8985a8ada77613a875789478613/src/AppNavbar.tsx#L37)
+[src/AppNavbar.tsx:37](https://github.com/StudletOrg/StudletFrontend/blob/8ce6f77c494f2de7ffedb51fa531b958d3d3c465/src/AppNavbar.tsx#L37)
 
 ***
 
@@ -550,7 +555,7 @@ The last name of the student.
 
 ###### Defined in
 
-[src/AppNavbar.tsx:34](https://github.com/StudletOrg/StudletFrontend/blob/724c01c07762c8985a8ada77613a875789478613/src/AppNavbar.tsx#L34)
+[src/AppNavbar.tsx:34](https://github.com/StudletOrg/StudletFrontend/blob/8ce6f77c494f2de7ffedb51fa531b958d3d3c465/src/AppNavbar.tsx#L34)
 
 ***
 
@@ -562,14 +567,86 @@ An array of roles assigned to the student (e.g., ["student", "member"]).
 
 ###### Defined in
 
-[src/AppNavbar.tsx:38](https://github.com/StudletOrg/StudletFrontend/blob/724c01c07762c8985a8ada77613a875789478613/src/AppNavbar.tsx#L38)
+[src/AppNavbar.tsx:38](https://github.com/StudletOrg/StudletFrontend/blob/8ce6f77c494f2de7ffedb51fa531b958d3d3c465/src/AppNavbar.tsx#L38)
+
+# Create Group
+
+
+<a name="creategroupreadmemd"></a>
+
+[**studlet v0.1.0**](../README.md) • **Docs**
+
+***
+
+[studlet v0.1.0](#modulesmd) / CreateGroup
+
+## CreateGroup
+
+### Index
+
+#### Functions
+
+- [default](#creategroupfunctionsdefaultmd)
+
+## Functions
+
+
+<a name="creategroupfunctionsdefaultmd"></a>
+
+[**studlet v0.1.0**](../../README.md) • **Docs**
+
+***
+
+[studlet v0.1.0](#modulesmd) / [CreateGroup](#creategroupreadmemd) / default
+
+### Function: default()
+
+> **default**(): `Element`
+
+A React component for creating a new group of students.
+This component retrieves the list of subjects and their instances from the server,
+allows the user to select a subject instance and one or more students, and submits the selected
+data to the server to be added to the group.
+It handles success and error messages based on the submission result.
+
+#### Returns
+
+`Element`
+
+The rendered component.
+
+#### Component
+
+#### State
+
+numer - The number of the group to be created.
+
+#### State
+
+subjectInstanceId - The identifier of the subject instance to which the group is associated.
+
+#### State
+
+studentIds - An array of identifiers of the students to be added to the group.
+
+#### State
+
+success - A message indicating successful group creation, or null if no message.
+
+#### State
+
+error - A message indicating an error during group creation, or null if no message.
+
+#### Defined in
+
+[src/CreateGroup.tsx:33](https://github.com/StudletOrg/StudletFrontend/blob/8ce6f77c494f2de7ffedb51fa531b958d3d3c465/src/CreateGroup.tsx#L33)
 
 # Create Note
 
 
 <a name="createnotereadmemd"></a>
 
-[**studlet v0.1.0**](#readmemd) • **Docs**
+[**studlet v0.1.0**](../README.md) • **Docs**
 
 ***
 
@@ -588,7 +665,7 @@ An array of roles assigned to the student (e.g., ["student", "member"]).
 
 <a name="createnotefunctionsdefaultmd"></a>
 
-[**studlet v0.1.0**](#readmemd) • **Docs**
+[**studlet v0.1.0**](../../README.md) • **Docs**
 
 ***
 
@@ -645,14 +722,14 @@ error - A message indicating an error during note creation, or null if no messag
 
 #### Defined in
 
-[src/CreateNote.tsx:40](https://github.com/StudletOrg/StudletFrontend/blob/724c01c07762c8985a8ada77613a875789478613/src/CreateNote.tsx#L40)
+[src/CreateNote.tsx:40](https://github.com/StudletOrg/StudletFrontend/blob/8ce6f77c494f2de7ffedb51fa531b958d3d3c465/src/CreateNote.tsx#L40)
 
 # Dashboard
 
 
 <a name="dashboardreadmemd"></a>
 
-[**studlet v0.1.0**](#readmemd) • **Docs**
+[**studlet v0.1.0**](../README.md) • **Docs**
 
 ***
 
@@ -676,7 +753,7 @@ error - A message indicating an error during note creation, or null if no messag
 
 <a name="dashboardfunctionsdefaultmd"></a>
 
-[**studlet v0.1.0**](#readmemd) • **Docs**
+[**studlet v0.1.0**](../../README.md) • **Docs**
 
 ***
 
@@ -692,14 +769,14 @@ error - A message indicating an error during note creation, or null if no messag
 
 #### Defined in
 
-[src/Dashboard.tsx:51](https://github.com/StudletOrg/StudletFrontend/blob/724c01c07762c8985a8ada77613a875789478613/src/Dashboard.tsx#L51)
+[src/Dashboard.tsx:51](https://github.com/StudletOrg/StudletFrontend/blob/8ce6f77c494f2de7ffedb51fa531b958d3d3c465/src/Dashboard.tsx#L51)
 
 ## Interfaces
 
 
 <a name="dashboardinterfacesdashboardsubjectspropmd"></a>
 
-[**studlet v0.1.0**](#readmemd) • **Docs**
+[**studlet v0.1.0**](../../README.md) • **Docs**
 
 ***
 
@@ -715,12 +792,12 @@ error - A message indicating an error during note creation, or null if no messag
 
 ###### Defined in
 
-[src/Dashboard.tsx:36](https://github.com/StudletOrg/StudletFrontend/blob/724c01c07762c8985a8ada77613a875789478613/src/Dashboard.tsx#L36)
+[src/Dashboard.tsx:36](https://github.com/StudletOrg/StudletFrontend/blob/8ce6f77c494f2de7ffedb51fa531b958d3d3c465/src/Dashboard.tsx#L36)
 
 
 <a name="dashboardinterfacessubjectmd"></a>
 
-[**studlet v0.1.0**](#readmemd) • **Docs**
+[**studlet v0.1.0**](../../README.md) • **Docs**
 
 ***
 
@@ -736,7 +813,7 @@ error - A message indicating an error during note creation, or null if no messag
 
 ###### Defined in
 
-[src/Dashboard.tsx:31](https://github.com/StudletOrg/StudletFrontend/blob/724c01c07762c8985a8ada77613a875789478613/src/Dashboard.tsx#L31)
+[src/Dashboard.tsx:31](https://github.com/StudletOrg/StudletFrontend/blob/8ce6f77c494f2de7ffedb51fa531b958d3d3c465/src/Dashboard.tsx#L31)
 
 ***
 
@@ -746,14 +823,14 @@ error - A message indicating an error during note creation, or null if no messag
 
 ###### Defined in
 
-[src/Dashboard.tsx:32](https://github.com/StudletOrg/StudletFrontend/blob/724c01c07762c8985a8ada77613a875789478613/src/Dashboard.tsx#L32)
+[src/Dashboard.tsx:32](https://github.com/StudletOrg/StudletFrontend/blob/8ce6f77c494f2de7ffedb51fa531b958d3d3c465/src/Dashboard.tsx#L32)
 
 # Dashboard Card
 
 
 <a name="dashboardcardreadmemd"></a>
 
-[**studlet v0.1.0**](#readmemd) • **Docs**
+[**studlet v0.1.0**](../README.md) • **Docs**
 
 ***
 
@@ -772,7 +849,7 @@ error - A message indicating an error during note creation, or null if no messag
 
 <a name="dashboardcardfunctionsdefaultmd"></a>
 
-[**studlet v0.1.0**](#readmemd) • **Docs**
+[**studlet v0.1.0**](../../README.md) • **Docs**
 
 ***
 
@@ -802,14 +879,148 @@ The rendered card component.
 
 #### Defined in
 
-[src/DashboardCard.tsx:30](https://github.com/StudletOrg/StudletFrontend/blob/724c01c07762c8985a8ada77613a875789478613/src/DashboardCard.tsx#L30)
+[src/DashboardCard.tsx:30](https://github.com/StudletOrg/StudletFrontend/blob/8ce6f77c494f2de7ffedb51fa531b958d3d3c465/src/DashboardCard.tsx#L30)
+
+# Edit User Form
+
+
+<a name="edituserformreadmemd"></a>
+
+[**studlet v0.1.0**](../README.md) • **Docs**
+
+***
+
+[studlet v0.1.0](#modulesmd) / EditUserForm
+
+## EditUserForm
+
+### Index
+
+#### Interfaces
+
+- [Student](#edituserforminterfacesstudentmd)
+
+#### Functions
+
+- [default](#edituserformfunctionsdefaultmd)
+
+## Functions
+
+
+<a name="edituserformfunctionsdefaultmd"></a>
+
+[**studlet v0.1.0**](../../README.md) • **Docs**
+
+***
+
+[studlet v0.1.0](#modulesmd) / [EditUserForm](#edituserformreadmemd) / default
+
+### Function: default()
+
+> **default**(): `Element`
+
+#### Returns
+
+`Element`
+
+#### Defined in
+
+[src/EditUserForm.tsx:27](https://github.com/StudletOrg/StudletFrontend/blob/8ce6f77c494f2de7ffedb51fa531b958d3d3c465/src/EditUserForm.tsx#L27)
+
+## Interfaces
+
+
+<a name="edituserforminterfacesstudentmd"></a>
+
+[**studlet v0.1.0**](../../README.md) • **Docs**
+
+***
+
+[studlet v0.1.0](#modulesmd) / [EditUserForm](#edituserformreadmemd) / Student
+
+### Interface: Student
+
+Represents a student user.
+ Student
+
+#### Properties
+
+##### dateofbirth
+
+> **dateofbirth**: `string`
+
+The date of birth of the student as a string.
+
+###### Defined in
+
+[src/EditUserForm.tsx:23](https://github.com/StudletOrg/StudletFrontend/blob/8ce6f77c494f2de7ffedb51fa531b958d3d3c465/src/EditUserForm.tsx#L23)
+
+***
+
+##### email
+
+> **email**: `string`
+
+The email address of the student.
+
+###### Defined in
+
+[src/EditUserForm.tsx:22](https://github.com/StudletOrg/StudletFrontend/blob/8ce6f77c494f2de7ffedb51fa531b958d3d3c465/src/EditUserForm.tsx#L22)
+
+***
+
+##### firstname
+
+> **firstname**: `string`
+
+The first name of the student.
+
+###### Defined in
+
+[src/EditUserForm.tsx:20](https://github.com/StudletOrg/StudletFrontend/blob/8ce6f77c494f2de7ffedb51fa531b958d3d3c465/src/EditUserForm.tsx#L20)
+
+***
+
+##### id
+
+> **id**: `number`
+
+The unique identifier for the student.
+
+###### Defined in
+
+[src/EditUserForm.tsx:19](https://github.com/StudletOrg/StudletFrontend/blob/8ce6f77c494f2de7ffedb51fa531b958d3d3c465/src/EditUserForm.tsx#L19)
+
+***
+
+##### lastname
+
+> **lastname**: `string`
+
+The last name of the student.
+
+###### Defined in
+
+[src/EditUserForm.tsx:21](https://github.com/StudletOrg/StudletFrontend/blob/8ce6f77c494f2de7ffedb51fa531b958d3d3c465/src/EditUserForm.tsx#L21)
+
+***
+
+##### roles
+
+> **roles**: `string`[]
+
+An array of roles assigned to the student.
+
+###### Defined in
+
+[src/EditUserForm.tsx:24](https://github.com/StudletOrg/StudletFrontend/blob/8ce6f77c494f2de7ffedb51fa531b958d3d3c465/src/EditUserForm.tsx#L24)
 
 # Error
 
 
 <a name="errorreadmemd"></a>
 
-[**studlet v0.1.0**](#readmemd) • **Docs**
+[**studlet v0.1.0**](../README.md) • **Docs**
 
 ***
 
@@ -828,7 +1039,7 @@ The rendered card component.
 
 <a name="errorfunctionsdefaultmd"></a>
 
-[**studlet v0.1.0**](#readmemd) • **Docs**
+[**studlet v0.1.0**](../../README.md) • **Docs**
 
 ***
 
@@ -852,14 +1063,14 @@ A JSX element representing the 404 error page.
 
 #### Defined in
 
-[src/Error.tsx:12](https://github.com/StudletOrg/StudletFrontend/blob/724c01c07762c8985a8ada77613a875789478613/src/Error.tsx#L12)
+[src/Error.tsx:12](https://github.com/StudletOrg/StudletFrontend/blob/8ce6f77c494f2de7ffedb51fa531b958d3d3c465/src/Error.tsx#L12)
 
 # Font Size Changer
 
 
 <a name="fontsizechangerreadmemd"></a>
 
-[**studlet v0.1.0**](#readmemd) • **Docs**
+[**studlet v0.1.0**](../README.md) • **Docs**
 
 ***
 
@@ -882,7 +1093,7 @@ A JSX element representing the 404 error page.
 
 <a name="fontsizechangerfunctionsdefaultmd"></a>
 
-[**studlet v0.1.0**](#readmemd) • **Docs**
+[**studlet v0.1.0**](../../README.md) • **Docs**
 
 ***
 
@@ -913,14 +1124,14 @@ The rendered font size changer component.
 
 #### Defined in
 
-[src/FontSizeChanger.tsx:37](https://github.com/StudletOrg/StudletFrontend/blob/724c01c07762c8985a8ada77613a875789478613/src/FontSizeChanger.tsx#L37)
+[src/FontSizeChanger.tsx:37](https://github.com/StudletOrg/StudletFrontend/blob/8ce6f77c494f2de7ffedb51fa531b958d3d3c465/src/FontSizeChanger.tsx#L37)
 
 ## Type Aliases
 
 
 <a name="fontsizechangertype-aliasesfontsizetypemd"></a>
 
-[**studlet v0.1.0**](#readmemd) • **Docs**
+[**studlet v0.1.0**](../../README.md) • **Docs**
 
 ***
 
@@ -934,14 +1145,14 @@ Represents the available font size options.
 
 #### Defined in
 
-[src/FontSizeChanger.tsx:13](https://github.com/StudletOrg/StudletFrontend/blob/724c01c07762c8985a8ada77613a875789478613/src/FontSizeChanger.tsx#L13)
+[src/FontSizeChanger.tsx:13](https://github.com/StudletOrg/StudletFrontend/blob/8ce6f77c494f2de7ffedb51fa531b958d3d3c465/src/FontSizeChanger.tsx#L13)
 
 # Grades
 
 
 <a name="gradesreadmemd"></a>
 
-[**studlet v0.1.0**](#readmemd) • **Docs**
+[**studlet v0.1.0**](../README.md) • **Docs**
 
 ***
 
@@ -960,7 +1171,7 @@ Represents the available font size options.
 
 <a name="gradesfunctionsdefaultmd"></a>
 
-[**studlet v0.1.0**](#readmemd) • **Docs**
+[**studlet v0.1.0**](../../README.md) • **Docs**
 
 ***
 
@@ -985,14 +1196,14 @@ The rendered component displaying the student's grades.
 
 #### Defined in
 
-[src/Grades.tsx:50](https://github.com/StudletOrg/StudletFrontend/blob/724c01c07762c8985a8ada77613a875789478613/src/Grades.tsx#L50)
+[src/Grades.tsx:50](https://github.com/StudletOrg/StudletFrontend/blob/8ce6f77c494f2de7ffedb51fa531b958d3d3c465/src/Grades.tsx#L50)
 
 # Group Details
 
 
 <a name="groupdetailsreadmemd"></a>
 
-[**studlet v0.1.0**](#readmemd) • **Docs**
+[**studlet v0.1.0**](../README.md) • **Docs**
 
 ***
 
@@ -1011,7 +1222,7 @@ The rendered component displaying the student's grades.
 
 <a name="groupdetailsfunctionsdefaultmd"></a>
 
-[**studlet v0.1.0**](#readmemd) • **Docs**
+[**studlet v0.1.0**](../../README.md) • **Docs**
 
 ***
 
@@ -1038,14 +1249,14 @@ The rendered GroupDetails component, which shows group
 
 #### Defined in
 
-[src/GroupDetails.tsx:27](https://github.com/StudletOrg/StudletFrontend/blob/724c01c07762c8985a8ada77613a875789478613/src/GroupDetails.tsx#L27)
+[src/GroupDetails.tsx:28](https://github.com/StudletOrg/StudletFrontend/blob/8ce6f77c494f2de7ffedb51fa531b958d3d3c465/src/GroupDetails.tsx#L28)
 
 # Home
 
 
 <a name="homereadmemd"></a>
 
-[**studlet v0.1.0**](#readmemd) • **Docs**
+[**studlet v0.1.0**](../README.md) • **Docs**
 
 ***
 
@@ -1064,7 +1275,7 @@ The rendered GroupDetails component, which shows group
 
 <a name="homefunctionsdefaultmd"></a>
 
-[**studlet v0.1.0**](#readmemd) • **Docs**
+[**studlet v0.1.0**](../../README.md) • **Docs**
 
 ***
 
@@ -1092,14 +1303,14 @@ The rendered Home component, which conditionally displays
 
 #### Defined in
 
-[src/Home.tsx:19](https://github.com/StudletOrg/StudletFrontend/blob/724c01c07762c8985a8ada77613a875789478613/src/Home.tsx#L19)
+[src/Home.tsx:19](https://github.com/StudletOrg/StudletFrontend/blob/8ce6f77c494f2de7ffedb51fa531b958d3d3c465/src/Home.tsx#L19)
 
 # Login Form
 
 
 <a name="loginformreadmemd"></a>
 
-[**studlet v0.1.0**](#readmemd) • **Docs**
+[**studlet v0.1.0**](../README.md) • **Docs**
 
 ***
 
@@ -1118,7 +1329,7 @@ The rendered Home component, which conditionally displays
 
 <a name="loginformfunctionsdefaultmd"></a>
 
-[**studlet v0.1.0**](#readmemd) • **Docs**
+[**studlet v0.1.0**](../../README.md) • **Docs**
 
 ***
 
@@ -1143,14 +1354,14 @@ The rendered LoginForm component.
 
 #### Defined in
 
-[src/LoginForm.tsx:28](https://github.com/StudletOrg/StudletFrontend/blob/724c01c07762c8985a8ada77613a875789478613/src/LoginForm.tsx#L28)
+[src/LoginForm.tsx:28](https://github.com/StudletOrg/StudletFrontend/blob/8ce6f77c494f2de7ffedb51fa531b958d3d3c465/src/LoginForm.tsx#L28)
 
 # Logo
 
 
 <a name="logoreadmemd"></a>
 
-[**studlet v0.1.0**](#readmemd) • **Docs**
+[**studlet v0.1.0**](../README.md) • **Docs**
 
 ***
 
@@ -1169,7 +1380,7 @@ The rendered LoginForm component.
 
 <a name="logofunctionsdefaultmd"></a>
 
-[**studlet v0.1.0**](#readmemd) • **Docs**
+[**studlet v0.1.0**](../../README.md) • **Docs**
 
 ***
 
@@ -1195,69 +1406,14 @@ The rendered Logo component, which includes an image
 
 #### Defined in
 
-[src/Logo.tsx:13](https://github.com/StudletOrg/StudletFrontend/blob/724c01c07762c8985a8ada77613a875789478613/src/Logo.tsx#L13)
-
-
-<a name="readmemd"></a>
-
-**studlet v0.1.0** • [**Docs**](#modulesmd)
-
-***
-
-# Studlet Frontend
-
-This is a React frontend for the Studlet platform. It is built with Create React App and uses React Router for client-side routing.
-
-## Folder Structure
-
-The project is organized as follows:
-
-- `public/`: static resources, such as images and the favicon
-- `src/`: the source code for the frontend
-    - `img/`: folder with images used by the typescript code
-	- `model/`: data models for the app
-	- `setupTests.ts`: Jest setup file
-	- `App.tsx`: the main application component
-	- `index.tsx`: the entry point for the app
-    - `*.tsx`: other TypeScript files in the src directory with components
-- `.env`: environment variables for the app (see below)
-
-## Cloning the Repository
-
-To clone the repository, run the following command:
-
-```bash
-git clone https://github.com/StudletOrg/StudletFrontend.git
-```
-
-## Environment Variables
-
-The app expects the following environment variables to be set:
-
-- `REACT_APP_API_URL`: the URL of the Studlet Backend API server
-
-To set these variables, create a `.env` file in the root of the project and add the following lines:
-
-```bash
-REACT_APP_API_URL="http://localhost:8080"
-```
-
-## Running the App
-
-To run the app, navigate to the root of the project and run the following command:
-
-```bash
-npm start
-```
-
-This will start the development server and open the app in a browser.
+[src/Logo.tsx:13](https://github.com/StudletOrg/StudletFrontend/blob/8ce6f77c494f2de7ffedb51fa531b958d3d3c465/src/Logo.tsx#L13)
 
 # Register Form
 
 
 <a name="registerformreadmemd"></a>
 
-[**studlet v0.1.0**](#readmemd) • **Docs**
+[**studlet v0.1.0**](../README.md) • **Docs**
 
 ***
 
@@ -1285,7 +1441,7 @@ This will start the development server and open the app in a browser.
 
 <a name="registerformfunctionsdefaultmd"></a>
 
-[**studlet v0.1.0**](#readmemd) • **Docs**
+[**studlet v0.1.0**](../../README.md) • **Docs**
 
 ***
 
@@ -1317,14 +1473,14 @@ The rendered RegisterForm component.
 
 #### Defined in
 
-[src/RegisterForm.tsx:61](https://github.com/StudletOrg/StudletFrontend/blob/724c01c07762c8985a8ada77613a875789478613/src/RegisterForm.tsx#L61)
+[src/RegisterForm.tsx:61](https://github.com/StudletOrg/StudletFrontend/blob/8ce6f77c494f2de7ffedb51fa531b958d3d3c465/src/RegisterForm.tsx#L61)
 
 ## Interfaces
 
 
 <a name="registerforminterfacesregisterdatamd"></a>
 
-[**studlet v0.1.0**](#readmemd) • **Docs**
+[**studlet v0.1.0**](../../README.md) • **Docs**
 
 ***
 
@@ -1349,7 +1505,7 @@ The password confirmation for validation.
 
 ###### Defined in
 
-[src/RegisterForm.tsx:27](https://github.com/StudletOrg/StudletFrontend/blob/724c01c07762c8985a8ada77613a875789478613/src/RegisterForm.tsx#L27)
+[src/RegisterForm.tsx:27](https://github.com/StudletOrg/StudletFrontend/blob/8ce6f77c494f2de7ffedb51fa531b958d3d3c465/src/RegisterForm.tsx#L27)
 
 ***
 
@@ -1361,7 +1517,7 @@ The email address of the user.
 
 ###### Defined in
 
-[src/RegisterForm.tsx:25](https://github.com/StudletOrg/StudletFrontend/blob/724c01c07762c8985a8ada77613a875789478613/src/RegisterForm.tsx#L25)
+[src/RegisterForm.tsx:25](https://github.com/StudletOrg/StudletFrontend/blob/8ce6f77c494f2de7ffedb51fa531b958d3d3c465/src/RegisterForm.tsx#L25)
 
 ***
 
@@ -1373,7 +1529,7 @@ The first name of the user.
 
 ###### Defined in
 
-[src/RegisterForm.tsx:23](https://github.com/StudletOrg/StudletFrontend/blob/724c01c07762c8985a8ada77613a875789478613/src/RegisterForm.tsx#L23)
+[src/RegisterForm.tsx:23](https://github.com/StudletOrg/StudletFrontend/blob/8ce6f77c494f2de7ffedb51fa531b958d3d3c465/src/RegisterForm.tsx#L23)
 
 ***
 
@@ -1385,7 +1541,7 @@ The last name of the user.
 
 ###### Defined in
 
-[src/RegisterForm.tsx:24](https://github.com/StudletOrg/StudletFrontend/blob/724c01c07762c8985a8ada77613a875789478613/src/RegisterForm.tsx#L24)
+[src/RegisterForm.tsx:24](https://github.com/StudletOrg/StudletFrontend/blob/8ce6f77c494f2de7ffedb51fa531b958d3d3c465/src/RegisterForm.tsx#L24)
 
 ***
 
@@ -1397,7 +1553,7 @@ The password chosen by the user.
 
 ###### Defined in
 
-[src/RegisterForm.tsx:26](https://github.com/StudletOrg/StudletFrontend/blob/724c01c07762c8985a8ada77613a875789478613/src/RegisterForm.tsx#L26)
+[src/RegisterForm.tsx:26](https://github.com/StudletOrg/StudletFrontend/blob/8ce6f77c494f2de7ffedb51fa531b958d3d3c465/src/RegisterForm.tsx#L26)
 
 ***
 
@@ -1409,14 +1565,14 @@ The role assigned to the user (e.g., student, teacher, moderator).
 
 ###### Defined in
 
-[src/RegisterForm.tsx:28](https://github.com/StudletOrg/StudletFrontend/blob/724c01c07762c8985a8ada77613a875789478613/src/RegisterForm.tsx#L28)
+[src/RegisterForm.tsx:28](https://github.com/StudletOrg/StudletFrontend/blob/8ce6f77c494f2de7ffedb51fa531b958d3d3c465/src/RegisterForm.tsx#L28)
 
 ## Type Aliases
 
 
 <a name="registerformtype-aliasesregisterformpropsmd"></a>
 
-[**studlet v0.1.0**](#readmemd) • **Docs**
+[**studlet v0.1.0**](../../README.md) • **Docs**
 
 ***
 
@@ -1452,12 +1608,12 @@ Type representing the props for the RegisterForm component.
 
 #### Defined in
 
-[src/RegisterForm.tsx:38](https://github.com/StudletOrg/StudletFrontend/blob/724c01c07762c8985a8ada77613a875789478613/src/RegisterForm.tsx#L38)
+[src/RegisterForm.tsx:38](https://github.com/StudletOrg/StudletFrontend/blob/8ce6f77c494f2de7ffedb51fa531b958d3d3c465/src/RegisterForm.tsx#L38)
 
 
 <a name="registerformtype-aliasesroletypemd"></a>
 
-[**studlet v0.1.0**](#readmemd) • **Docs**
+[**studlet v0.1.0**](../../README.md) • **Docs**
 
 ***
 
@@ -1471,14 +1627,14 @@ Type representing the possible roles for a user.
 
 #### Defined in
 
-[src/RegisterForm.tsx:48](https://github.com/StudletOrg/StudletFrontend/blob/724c01c07762c8985a8ada77613a875789478613/src/RegisterForm.tsx#L48)
+[src/RegisterForm.tsx:48](https://github.com/StudletOrg/StudletFrontend/blob/8ce6f77c494f2de7ffedb51fa531b958d3d3c465/src/RegisterForm.tsx#L48)
 
 # Side Menu
 
 
 <a name="sidemenureadmemd"></a>
 
-[**studlet v0.1.0**](#readmemd) • **Docs**
+[**studlet v0.1.0**](../README.md) • **Docs**
 
 ***
 
@@ -1497,7 +1653,7 @@ Type representing the possible roles for a user.
 
 <a name="sidemenufunctionsdefaultmd"></a>
 
-[**studlet v0.1.0**](#readmemd) • **Docs**
+[**studlet v0.1.0**](../../README.md) • **Docs**
 
 ***
 
@@ -1527,14 +1683,14 @@ The rendered SideMenu component containing navigation links.
 
 #### Defined in
 
-[src/SideMenu.tsx:44](https://github.com/StudletOrg/StudletFrontend/blob/724c01c07762c8985a8ada77613a875789478613/src/SideMenu.tsx#L44)
+[src/SideMenu.tsx:55](https://github.com/StudletOrg/StudletFrontend/blob/8ce6f77c494f2de7ffedb51fa531b958d3d3c465/src/SideMenu.tsx#L55)
 
 # Student Groups
 
 
 <a name="studentgroupsreadmemd"></a>
 
-[**studlet v0.1.0**](#readmemd) • **Docs**
+[**studlet v0.1.0**](../README.md) • **Docs**
 
 ***
 
@@ -1553,7 +1709,7 @@ The rendered SideMenu component containing navigation links.
 
 <a name="studentgroupsfunctionsdefaultmd"></a>
 
-[**studlet v0.1.0**](#readmemd) • **Docs**
+[**studlet v0.1.0**](../../README.md) • **Docs**
 
 ***
 
@@ -1580,14 +1736,14 @@ The rendered StudentGroups component, which shows
 
 #### Defined in
 
-[src/StudentGroups.tsx:48](https://github.com/StudletOrg/StudletFrontend/blob/724c01c07762c8985a8ada77613a875789478613/src/StudentGroups.tsx#L48)
+[src/StudentGroups.tsx:49](https://github.com/StudletOrg/StudletFrontend/blob/8ce6f77c494f2de7ffedb51fa531b958d3d3c465/src/StudentGroups.tsx#L49)
 
 # Teacher Grades
 
 
 <a name="teachergradesreadmemd"></a>
 
-[**studlet v0.1.0**](#readmemd) • **Docs**
+[**studlet v0.1.0**](../README.md) • **Docs**
 
 ***
 
@@ -1606,7 +1762,7 @@ The rendered StudentGroups component, which shows
 
 <a name="teachergradesfunctionsdefaultmd"></a>
 
-[**studlet v0.1.0**](#readmemd) • **Docs**
+[**studlet v0.1.0**](../../README.md) • **Docs**
 
 ***
 
@@ -1631,14 +1787,68 @@ The rendered TeacherGrades component.
 
 #### Defined in
 
-[src/TeacherGrades.tsx:70](https://github.com/StudletOrg/StudletFrontend/blob/724c01c07762c8985a8ada77613a875789478613/src/TeacherGrades.tsx#L70)
+[src/TeacherGrades.tsx:70](https://github.com/StudletOrg/StudletFrontend/blob/8ce6f77c494f2de7ffedb51fa531b958d3d3c465/src/TeacherGrades.tsx#L70)
+
+# Universities Page
+
+
+<a name="universitiespagereadmemd"></a>
+
+[**studlet v0.1.0**](../README.md) • **Docs**
+
+***
+
+[studlet v0.1.0](#modulesmd) / UniversitiesPage
+
+## UniversitiesPage
+
+### Index
+
+#### Functions
+
+- [default](#universitiespagefunctionsdefaultmd)
+
+## Functions
+
+
+<a name="universitiespagefunctionsdefaultmd"></a>
+
+[**studlet v0.1.0**](../../README.md) • **Docs**
+
+***
+
+[studlet v0.1.0](#modulesmd) / [UniversitiesPage](#universitiespagereadmemd) / default
+
+### Function: default()
+
+> **default**(): `Element`
+
+A React component that displays a list of all universities from the API.
+
+It fetches the list of universities on mount and displays them in a table.
+Each table row represents a single university with its name, address, and a
+button to manage the university if the user is the rector of that university.
+
+The component also renders a side menu with navigation links.
+
+#### Returns
+
+`Element`
+
+The rendered UniversitiesPage component.
+
+#### Component
+
+#### Defined in
+
+[src/UniversitiesPage.tsx:65](https://github.com/StudletOrg/StudletFrontend/blob/8ce6f77c494f2de7ffedb51fa531b958d3d3c465/src/UniversitiesPage.tsx#L65)
 
 # User Details
 
 
 <a name="userdetailsreadmemd"></a>
 
-[**studlet v0.1.0**](#readmemd) • **Docs**
+[**studlet v0.1.0**](../README.md) • **Docs**
 
 ***
 
@@ -1661,7 +1871,7 @@ The rendered TeacherGrades component.
 
 <a name="userdetailsfunctionsdefaultmd"></a>
 
-[**studlet v0.1.0**](#readmemd) • **Docs**
+[**studlet v0.1.0**](../../README.md) • **Docs**
 
 ***
 
@@ -1686,14 +1896,14 @@ The rendered UserDetails component.
 
 #### Defined in
 
-[src/UserDetails.tsx:35](https://github.com/StudletOrg/StudletFrontend/blob/724c01c07762c8985a8ada77613a875789478613/src/UserDetails.tsx#L35)
+[src/UserDetails.tsx:35](https://github.com/StudletOrg/StudletFrontend/blob/8ce6f77c494f2de7ffedb51fa531b958d3d3c465/src/UserDetails.tsx#L35)
 
 ## Interfaces
 
 
 <a name="userdetailsinterfacesstudentmd"></a>
 
-[**studlet v0.1.0**](#readmemd) • **Docs**
+[**studlet v0.1.0**](../../README.md) • **Docs**
 
 ***
 
@@ -1714,7 +1924,7 @@ The date of birth of the student as a string.
 
 ###### Defined in
 
-[src/UserDetails.tsx:22](https://github.com/StudletOrg/StudletFrontend/blob/724c01c07762c8985a8ada77613a875789478613/src/UserDetails.tsx#L22)
+[src/UserDetails.tsx:22](https://github.com/StudletOrg/StudletFrontend/blob/8ce6f77c494f2de7ffedb51fa531b958d3d3c465/src/UserDetails.tsx#L22)
 
 ***
 
@@ -1726,7 +1936,7 @@ The email address of the student.
 
 ###### Defined in
 
-[src/UserDetails.tsx:21](https://github.com/StudletOrg/StudletFrontend/blob/724c01c07762c8985a8ada77613a875789478613/src/UserDetails.tsx#L21)
+[src/UserDetails.tsx:21](https://github.com/StudletOrg/StudletFrontend/blob/8ce6f77c494f2de7ffedb51fa531b958d3d3c465/src/UserDetails.tsx#L21)
 
 ***
 
@@ -1738,7 +1948,7 @@ The first name of the student.
 
 ###### Defined in
 
-[src/UserDetails.tsx:19](https://github.com/StudletOrg/StudletFrontend/blob/724c01c07762c8985a8ada77613a875789478613/src/UserDetails.tsx#L19)
+[src/UserDetails.tsx:19](https://github.com/StudletOrg/StudletFrontend/blob/8ce6f77c494f2de7ffedb51fa531b958d3d3c465/src/UserDetails.tsx#L19)
 
 ***
 
@@ -1750,7 +1960,7 @@ The unique identifier for the student.
 
 ###### Defined in
 
-[src/UserDetails.tsx:18](https://github.com/StudletOrg/StudletFrontend/blob/724c01c07762c8985a8ada77613a875789478613/src/UserDetails.tsx#L18)
+[src/UserDetails.tsx:18](https://github.com/StudletOrg/StudletFrontend/blob/8ce6f77c494f2de7ffedb51fa531b958d3d3c465/src/UserDetails.tsx#L18)
 
 ***
 
@@ -1762,7 +1972,7 @@ The last name of the student.
 
 ###### Defined in
 
-[src/UserDetails.tsx:20](https://github.com/StudletOrg/StudletFrontend/blob/724c01c07762c8985a8ada77613a875789478613/src/UserDetails.tsx#L20)
+[src/UserDetails.tsx:20](https://github.com/StudletOrg/StudletFrontend/blob/8ce6f77c494f2de7ffedb51fa531b958d3d3c465/src/UserDetails.tsx#L20)
 
 ***
 
@@ -1774,14 +1984,14 @@ An array of roles assigned to the student.
 
 ###### Defined in
 
-[src/UserDetails.tsx:23](https://github.com/StudletOrg/StudletFrontend/blob/724c01c07762c8985a8ada77613a875789478613/src/UserDetails.tsx#L23)
+[src/UserDetails.tsx:23](https://github.com/StudletOrg/StudletFrontend/blob/8ce6f77c494f2de7ffedb51fa531b958d3d3c465/src/UserDetails.tsx#L23)
 
 # Validation
 
 
 <a name="validationreadmemd"></a>
 
-[**studlet v0.1.0**](#readmemd) • **Docs**
+[**studlet v0.1.0**](../README.md) • **Docs**
 
 ***
 
@@ -1801,7 +2011,7 @@ An array of roles assigned to the student.
 
 <a name="validationvariablesemailregexmd"></a>
 
-[**studlet v0.1.0**](#readmemd) • **Docs**
+[**studlet v0.1.0**](../../README.md) • **Docs**
 
 ***
 
@@ -1823,12 +2033,12 @@ This regex checks for the following criteria:
 
 #### Defined in
 
-[src/Validation.ts:12](https://github.com/StudletOrg/StudletFrontend/blob/724c01c07762c8985a8ada77613a875789478613/src/Validation.ts#L12)
+[src/Validation.ts:12](https://github.com/StudletOrg/StudletFrontend/blob/8ce6f77c494f2de7ffedb51fa531b958d3d3c465/src/Validation.ts#L12)
 
 
 <a name="validationvariablespasswordregexmd"></a>
 
-[**studlet v0.1.0**](#readmemd) • **Docs**
+[**studlet v0.1.0**](../../README.md) • **Docs**
 
 ***
 
@@ -1849,73 +2059,14 @@ This regex checks for the following criteria:
 
 #### Defined in
 
-[src/Validation.ts:24](https://github.com/StudletOrg/StudletFrontend/blob/724c01c07762c8985a8ada77613a875789478613/src/Validation.ts#L24)
-
-# Documents
-
-
-<a name="documentsreadmemd"></a>
-
-[**studlet v0.1.0**](#readmemd) • **Docs**
-
-***
-
-[studlet v0.1.0](#modulesmd) / README
-
-## Studlet Frontend
-
-This is a React frontend for the Studlet platform. It is built with Create React App and uses React Router for client-side routing.
-
-### Folder Structure
-
-The project is organized as follows:
-
-- `public/`: static resources, such as images and the favicon
-- `src/`: the source code for the frontend
-    - `img/`: folder with images used by the typescript code
-	- `model/`: data models for the app
-	- `setupTests.ts`: Jest setup file
-	- `App.tsx`: the main application component
-	- `index.tsx`: the entry point for the app
-    - `*.tsx`: other TypeScript files in the src directory with components
-- `.env`: environment variables for the app (see below)
-
-### Cloning the Repository
-
-To clone the repository, run the following command:
-
-```bash
-git clone https://github.com/StudletOrg/StudletFrontend.git
-```
-
-### Environment Variables
-
-The app expects the following environment variables to be set:
-
-- `REACT_APP_API_URL`: the URL of the Studlet Backend API server
-
-To set these variables, create a `.env` file in the root of the project and add the following lines:
-
-```bash
-REACT_APP_API_URL="http://localhost:8080"
-```
-
-### Running the App
-
-To run the app, navigate to the root of the project and run the following command:
-
-```bash
-npm start
-```
-
-This will start the development server and open the app in a browser.
+[src/Validation.ts:24](https://github.com/StudletOrg/StudletFrontend/blob/8ce6f77c494f2de7ffedb51fa531b958d3d3c465/src/Validation.ts#L24)
 
 # Index
 
 
 <a name="indexreadmemd"></a>
 
-[**studlet v0.1.0**](#readmemd) • **Docs**
+[**studlet v0.1.0**](../README.md) • **Docs**
 
 ***
 
@@ -1930,7 +2081,7 @@ This will start the development server and open the app in a browser.
 
 <a name="modelgradereadmemd"></a>
 
-[**studlet v0.1.0**](#readmemd) • **Docs**
+[**studlet v0.1.0**](../../README.md) • **Docs**
 
 ***
 
@@ -1949,7 +2100,7 @@ This will start the development server and open the app in a browser.
 
 <a name="modelgradeinterfacesgrademd"></a>
 
-[**studlet v0.1.0**](#readmemd) • **Docs**
+[**studlet v0.1.0**](../../../README.md) • **Docs**
 
 ***
 
@@ -1971,7 +2122,7 @@ The numerical value of the grade.
 
 ####### Defined in
 
-[src/model/Grade.ts:12](https://github.com/StudletOrg/StudletFrontend/blob/724c01c07762c8985a8ada77613a875789478613/src/model/Grade.ts#L12)
+[src/model/Grade.ts:12](https://github.com/StudletOrg/StudletFrontend/blob/8ce6f77c494f2de7ffedb51fa531b958d3d3c465/src/model/Grade.ts#L12)
 
 ***
 
@@ -1983,7 +2134,7 @@ The unique identifier for the grade entry.
 
 ####### Defined in
 
-[src/model/Grade.ts:10](https://github.com/StudletOrg/StudletFrontend/blob/724c01c07762c8985a8ada77613a875789478613/src/model/Grade.ts#L10)
+[src/model/Grade.ts:10](https://github.com/StudletOrg/StudletFrontend/blob/8ce6f77c494f2de7ffedb51fa531b958d3d3c465/src/model/Grade.ts#L10)
 
 ***
 
@@ -1995,14 +2146,14 @@ The name of the subject for which the grade is assigned.
 
 ####### Defined in
 
-[src/model/Grade.ts:11](https://github.com/StudletOrg/StudletFrontend/blob/724c01c07762c8985a8ada77613a875789478613/src/model/Grade.ts#L11)
+[src/model/Grade.ts:11](https://github.com/StudletOrg/StudletFrontend/blob/8ce6f77c494f2de7ffedb51fa531b958d3d3c465/src/model/Grade.ts#L11)
 
 ## Group
 
 
 <a name="modelgroupreadmemd"></a>
 
-[**studlet v0.1.0**](#readmemd) • **Docs**
+[**studlet v0.1.0**](../../README.md) • **Docs**
 
 ***
 
@@ -2022,7 +2173,7 @@ The name of the subject for which the grade is assigned.
 
 <a name="modelgroupinterfacesgroupmd"></a>
 
-[**studlet v0.1.0**](#readmemd) • **Docs**
+[**studlet v0.1.0**](../../../README.md) • **Docs**
 
 ***
 
@@ -2044,7 +2195,7 @@ The unique identifier for the group.
 
 ####### Defined in
 
-[src/model/Group.ts:41](https://github.com/StudletOrg/StudletFrontend/blob/724c01c07762c8985a8ada77613a875789478613/src/model/Group.ts#L41)
+[src/model/Group.ts:41](https://github.com/StudletOrg/StudletFrontend/blob/8ce6f77c494f2de7ffedb51fa531b958d3d3c465/src/model/Group.ts#L41)
 
 ***
 
@@ -2056,7 +2207,7 @@ The number assigned to the group.
 
 ####### Defined in
 
-[src/model/Group.ts:42](https://github.com/StudletOrg/StudletFrontend/blob/724c01c07762c8985a8ada77613a875789478613/src/model/Group.ts#L42)
+[src/model/Group.ts:42](https://github.com/StudletOrg/StudletFrontend/blob/8ce6f77c494f2de7ffedb51fa531b958d3d3c465/src/model/Group.ts#L42)
 
 ***
 
@@ -2068,7 +2219,7 @@ An optional array of notes related to the group.
 
 ####### Defined in
 
-[src/model/Group.ts:50](https://github.com/StudletOrg/StudletFrontend/blob/724c01c07762c8985a8ada77613a875789478613/src/model/Group.ts#L50)
+[src/model/Group.ts:50](https://github.com/StudletOrg/StudletFrontend/blob/8ce6f77c494f2de7ffedb51fa531b958d3d3c465/src/model/Group.ts#L50)
 
 ***
 
@@ -2092,7 +2243,7 @@ The professor associated with the group.
 
 ####### Defined in
 
-[src/model/Group.ts:43](https://github.com/StudletOrg/StudletFrontend/blob/724c01c07762c8985a8ada77613a875789478613/src/model/Group.ts#L43)
+[src/model/Group.ts:43](https://github.com/StudletOrg/StudletFrontend/blob/8ce6f77c494f2de7ffedb51fa531b958d3d3c465/src/model/Group.ts#L43)
 
 ***
 
@@ -2104,7 +2255,7 @@ The number of students in the group.
 
 ####### Defined in
 
-[src/model/Group.ts:48](https://github.com/StudletOrg/StudletFrontend/blob/724c01c07762c8985a8ada77613a875789478613/src/model/Group.ts#L48)
+[src/model/Group.ts:48](https://github.com/StudletOrg/StudletFrontend/blob/8ce6f77c494f2de7ffedb51fa531b958d3d3c465/src/model/Group.ts#L48)
 
 ***
 
@@ -2116,12 +2267,12 @@ The subject associated with the group.
 
 ####### Defined in
 
-[src/model/Group.ts:49](https://github.com/StudletOrg/StudletFrontend/blob/724c01c07762c8985a8ada77613a875789478613/src/model/Group.ts#L49)
+[src/model/Group.ts:49](https://github.com/StudletOrg/StudletFrontend/blob/8ce6f77c494f2de7ffedb51fa531b958d3d3c465/src/model/Group.ts#L49)
 
 
 <a name="modelgroupinterfacesnotemd"></a>
 
-[**studlet v0.1.0**](#readmemd) • **Docs**
+[**studlet v0.1.0**](../../../README.md) • **Docs**
 
 ***
 
@@ -2155,7 +2306,7 @@ The author of the note.
 
 ####### Defined in
 
-[src/model/Group.ts:19](https://github.com/StudletOrg/StudletFrontend/blob/724c01c07762c8985a8ada77613a875789478613/src/model/Group.ts#L19)
+[src/model/Group.ts:19](https://github.com/StudletOrg/StudletFrontend/blob/8ce6f77c494f2de7ffedb51fa531b958d3d3c465/src/model/Group.ts#L19)
 
 ***
 
@@ -2167,7 +2318,7 @@ The content of the note. Can be null if no content is provided.
 
 ####### Defined in
 
-[src/model/Group.ts:18](https://github.com/StudletOrg/StudletFrontend/blob/724c01c07762c8985a8ada77613a875789478613/src/model/Group.ts#L18)
+[src/model/Group.ts:18](https://github.com/StudletOrg/StudletFrontend/blob/8ce6f77c494f2de7ffedb51fa531b958d3d3c465/src/model/Group.ts#L18)
 
 ***
 
@@ -2179,7 +2330,7 @@ The date when the note was created, in ISO 8601 format.
 
 ####### Defined in
 
-[src/model/Group.ts:17](https://github.com/StudletOrg/StudletFrontend/blob/724c01c07762c8985a8ada77613a875789478613/src/model/Group.ts#L17)
+[src/model/Group.ts:17](https://github.com/StudletOrg/StudletFrontend/blob/8ce6f77c494f2de7ffedb51fa531b958d3d3c465/src/model/Group.ts#L17)
 
 ***
 
@@ -2191,7 +2342,7 @@ The unique identifier for the note.
 
 ####### Defined in
 
-[src/model/Group.ts:15](https://github.com/StudletOrg/StudletFrontend/blob/724c01c07762c8985a8ada77613a875789478613/src/model/Group.ts#L15)
+[src/model/Group.ts:15](https://github.com/StudletOrg/StudletFrontend/blob/8ce6f77c494f2de7ffedb51fa531b958d3d3c465/src/model/Group.ts#L15)
 
 ***
 
@@ -2203,14 +2354,14 @@ The title of the note.
 
 ####### Defined in
 
-[src/model/Group.ts:16](https://github.com/StudletOrg/StudletFrontend/blob/724c01c07762c8985a8ada77613a875789478613/src/model/Group.ts#L16)
+[src/model/Group.ts:16](https://github.com/StudletOrg/StudletFrontend/blob/8ce6f77c494f2de7ffedb51fa531b958d3d3c465/src/model/Group.ts#L16)
 
 ## Student
 
 
 <a name="modelstudentreadmemd"></a>
 
-[**studlet v0.1.0**](#readmemd) • **Docs**
+[**studlet v0.1.0**](../../README.md) • **Docs**
 
 ***
 
@@ -2229,7 +2380,7 @@ The title of the note.
 
 <a name="modelstudentinterfacesstudentmd"></a>
 
-[**studlet v0.1.0**](#readmemd) • **Docs**
+[**studlet v0.1.0**](../../../README.md) • **Docs**
 
 ***
 
@@ -2251,7 +2402,7 @@ The email address of the student.
 
 ####### Defined in
 
-[src/model/Student.ts:14](https://github.com/StudletOrg/StudletFrontend/blob/724c01c07762c8985a8ada77613a875789478613/src/model/Student.ts#L14)
+[src/model/Student.ts:14](https://github.com/StudletOrg/StudletFrontend/blob/8ce6f77c494f2de7ffedb51fa531b958d3d3c465/src/model/Student.ts#L14)
 
 ***
 
@@ -2263,7 +2414,7 @@ The first name of the student.
 
 ####### Defined in
 
-[src/model/Student.ts:12](https://github.com/StudletOrg/StudletFrontend/blob/724c01c07762c8985a8ada77613a875789478613/src/model/Student.ts#L12)
+[src/model/Student.ts:12](https://github.com/StudletOrg/StudletFrontend/blob/8ce6f77c494f2de7ffedb51fa531b958d3d3c465/src/model/Student.ts#L12)
 
 ***
 
@@ -2275,7 +2426,7 @@ The unique identifier for the student.
 
 ####### Defined in
 
-[src/model/Student.ts:11](https://github.com/StudletOrg/StudletFrontend/blob/724c01c07762c8985a8ada77613a875789478613/src/model/Student.ts#L11)
+[src/model/Student.ts:11](https://github.com/StudletOrg/StudletFrontend/blob/8ce6f77c494f2de7ffedb51fa531b958d3d3c465/src/model/Student.ts#L11)
 
 ***
 
@@ -2287,20 +2438,16 @@ The last name of the student.
 
 ####### Defined in
 
-[src/model/Student.ts:13](https://github.com/StudletOrg/StudletFrontend/blob/724c01c07762c8985a8ada77613a875789478613/src/model/Student.ts#L13)
+[src/model/Student.ts:13](https://github.com/StudletOrg/StudletFrontend/blob/8ce6f77c494f2de7ffedb51fa531b958d3d3c465/src/model/Student.ts#L13)
 
 
 <a name="modulesmd"></a>
 
-[**studlet v0.1.0**](#readmemd) • **Docs**
+[**studlet v0.1.0**](README.md) • **Docs**
 
 ***
 
 # studlet v0.1.0
-
-## Documents
-
-- [README](#documentsreadmemd)
 
 ## Modules
 
@@ -2309,9 +2456,11 @@ The last name of the student.
 - [App](#appreadmemd)
 - [App.test](#apptestreadmemd)
 - [AppNavbar](#appnavbarreadmemd)
+- [CreateGroup](#creategroupreadmemd)
 - [CreateNote](#createnotereadmemd)
 - [Dashboard](#dashboardreadmemd)
 - [DashboardCard](#dashboardcardreadmemd)
+- [EditUserForm](#edituserformreadmemd)
 - [Error](#errorreadmemd)
 - [FontSizeChanger](#fontsizechangerreadmemd)
 - [Grades](#gradesreadmemd)
@@ -2328,5 +2477,6 @@ The last name of the student.
 - [SideMenu](#sidemenureadmemd)
 - [StudentGroups](#studentgroupsreadmemd)
 - [TeacherGrades](#teachergradesreadmemd)
+- [UniversitiesPage](#universitiespagereadmemd)
 - [UserDetails](#userdetailsreadmemd)
 - [Validation](#validationreadmemd)

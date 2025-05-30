@@ -1,6 +1,14 @@
-# Studlet Frontend
+# Studlet Frontend Documentation
 
-This is a React frontend for the Studlet platform. It is built with Create React App and uses React Router for client-side routing.
+This is a React frontend for the Studlet application. It is built with [TypeScript](https://www.typescriptlang.org/) programming language and Create React App script. Also it uses [react-router-dom](https://www.npmjs.com/package/react-router-dom) for client-side routing [bootstrap](https://getbootstrap.com/) for styling and [react-bootstrap](https://www.npmjs.com/package/react-bootstrap) for bootstrap components in React, and [axios](https://www.npmjs.com/package/axios) for HTTP requests, and [react-cookie](https://www.npmjs.com/package/react-cookie) for handling cookies.
+
+Documentation is generated using [typedoc](https://typedoc.org/) and [typedoc-plugin-markdown](https://www.npmjs.com/package/typedoc-plugin-markdown). And then it is merged using [concat-md](https://www.npmjs.com/package/concat-md) and [pandoc](https://pandoc.org/) to convert it to a pdf file.
+
+## Project members
+
+- Kamil Opara
+- Marceli Nowak
+- Maciej Kurek
 
 ## Folder Structure
 
@@ -8,12 +16,11 @@ The project is organized as follows:
 
 - `public/`: static resources, such as images and the favicon
 - `src/`: the source code for the frontend
-    - `img/`: folder with images used by the typescript code
+	- `img/`: folder with images used by the typescript code
 	- `model/`: data models for the app
-	- `setupTests.ts`: Jest setup file
 	- `App.tsx`: the main application component
 	- `index.tsx`: the entry point for the app
-    - `*.tsx`: other TypeScript files in the src directory with components
+	- `*.tsx`: other TypeScript files in the src directory with components
 - `.env`: environment variables for the app (see below)
 
 ## Cloning the Repository
