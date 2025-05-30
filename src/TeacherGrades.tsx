@@ -141,9 +141,19 @@ export default function TeacherGrades() {
             <SideMenu />
           </Col>
           <Col lg={10}>
-            <h2>Twoje grupy</h2>
-            <hr />
-
+            <Row className="align-items-center mb-3">
+              <Col>
+                <h2>Twoje grupy</h2>
+              </Col>
+              <Col className="text-end">
+                <Button
+                  variant="outline-secondary"
+                  onClick={() => navigate('/create-group')}
+                >
+                  Utwórz nową grupę
+                </Button>
+              </Col>
+            </Row>
             {loadingGroups ? (
               <Spinner animation="border" />
             ) : (

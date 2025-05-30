@@ -9,6 +9,7 @@ import {
   Container,
   ListGroup,
   Row,
+  Spinner,
 } from "react-bootstrap";
 import AppNavbar from './AppNavbar';
 import SideMenu from './SideMenu';
@@ -65,7 +66,13 @@ function GroupDetails() {
     }
   }, [groupId, token]);
 
-  if (loading) return <p className="loading">Ładowanie...</p>;
+ if (loading) return (
+  <Container fluid className="d-flex justify-content-center align-items-center vh-100">
+    <Spinner animation="border" variant="primary" role="status">
+      <span className="visually-hidden">Ładowanie...</span>
+    </Spinner>
+  </Container>
+  );
   if (!group) return <p>Nie znaleziono grupy.</p>;
 
   return (

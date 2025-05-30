@@ -4,7 +4,7 @@ import { Container, Nav, Navbar } from "react-bootstrap";
 import FontSizeChanger from "./FontSizeChanger";
 import Logo from "./Logo";
 import axios from "axios";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useCookies } from "react-cookie";
 
 /**

@@ -1,5 +1,5 @@
-import React from "react";
-import { Card, Col, Container, Nav, Navbar, NavDropdown, Row } from "react-bootstrap";
+import React, { useState } from "react";
+import { Card, Col, Container, Nav, Navbar, NavDropdown, Row, Spinner } from "react-bootstrap";
 import logo from "./img/logo32.png";
 import Logo from "./Logo";
 import DashboardCard from "./DashboardCard";
@@ -52,6 +52,7 @@ function Dashboard() {
   const [grades, setGrades] = React.useState<Grade[]>([]);
   const [subjects, setSubjects] = React.useState<Subject[]>([]);
   const token = localStorage.getItem('jwtToken');
+  const [loading, setLoading] = useState(true);
 
   const [fontSizeCookie, setFontSizeCookie, removeFontSizeCookie] = useCookies(['fontSize']);
 
@@ -64,6 +65,7 @@ function Dashboard() {
     })
     .then(response => {
       setGrades(response.data);
+      setLoading(false);
     })
     .catch(error => {
       console.error("Błąd pobierania ocen:", error);
@@ -78,13 +80,20 @@ function Dashboard() {
       }
     })
     .then(response => {
-      console.log("Oceny:", response.data);
       setSubjects(response.data);
     })
     .catch(error => {
       console.error("Błąd pobierania przedmiotów:", error);
     });
   }, [token]);
+
+   if (loading) return (
+    <Container fluid className="d-flex justify-content-center align-items-center vh-100">
+      <Spinner animation="border" variant="primary" role="status">
+        <span className="visually-hidden">Ładowanie...</span>
+      </Spinner>
+    </Container>
+  );
   
   return <>
     <AppNavbar onLogout={() => {  }} />

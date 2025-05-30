@@ -16,6 +16,9 @@ import TeacherGrades from './TeacherGrades';
 import CreateNote from './CreateNote';
 import AddGrade from './AddGrade';
 import AddStudentToGroup from './AddStudentToGroup';
+import LoginForm from './LoginForm';
+import EditUserForm from './EditUserForm';
+import CreateGroup from './CreateGroup';
 
 function About() {
   return (
@@ -53,6 +56,7 @@ function Container() {
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
         <Route path='/register' element={<RegisterForm />} />
+        <Route path='/login' element={<LoginForm />} />
         <Route path="*" element={<Error />} />
         <Route path='/dashboard' element={<Dashboard />} />
         <Route path='/grades' element={<AllGrades />} />
@@ -62,6 +66,8 @@ function Container() {
         <Route path='/teachergradestest' element={<TeacherGrades />} />
         <Route path="/notes/new" element={<CreateNote />} /><Route path="/grades/add/:groupId/:studentId" element={<AddGrade />} />
         <Route path="/add-student-to-group" element={<AddStudentToGroup />} />
+        <Route path="/settings" element={<EditUserForm />} />
+        <Route path="/create-group" element={<CreateGroup />} />
       </Routes>
     </div>
   );

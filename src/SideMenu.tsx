@@ -12,10 +12,21 @@ import { Link, useLocation } from "react-router-dom";
  */
 const defaultMenu  = [
   { path: "/dashboard", label: "Dashboard", icon: "🏠" },
-  { path: "/grades", label: "Oceny", icon: "📚" },
-  { path: "/subjects", label: "Zajęcia", icon: "📖" },
   { path: "/uczelnia", label: "Uczelnie", icon: "🎓" },
   { path: "/settings", label: "Ustawienia", icon: "⚙️" },
+];
+
+/**
+ * Additional menu options for students.
+ * 
+ * This array contains the paths, labels, and icons for extra navigation 
+ * items available specifically to users with the student role.
+ * 
+ * @constant {Array<{ path: string, label: string, icon: string }>}
+ */
+const studentExtras = [
+  { path: "/subjects", label: "Zajęcia", icon: "📖" },
+  { path: "/grades", label: "Oceny", icon: "📚" },
 ];
 
 /**
@@ -57,9 +68,13 @@ const SideMenu: React.FC = () => {
 
   const isProfessor = userRoles.includes("ROLE_PROFESSOR");
 
-  const menuOptions = isProfessor
-    ? [...defaultMenu, ...professorExtras]
+  var menuOptions = !isProfessor
+    ? [...defaultMenu, ...studentExtras]
     : defaultMenu;
+
+  menuOptions = isProfessor
+    ? [...menuOptions, ...professorExtras]
+    : menuOptions;
 
   return (
     <Nav defaultActiveKey={location.pathname} className="flex-column">

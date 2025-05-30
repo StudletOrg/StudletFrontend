@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import { Container, Card, Col, Row, ListGroup } from "react-bootstrap";
+import { Container, Card, Col, Row, ListGroup, Spinner } from "react-bootstrap";
 import AppNavbar from "./AppNavbar";
 import SideMenu from "./SideMenu";
 
@@ -68,7 +68,13 @@ function StudentGroups() {
       });
   }, [token]);
 
-  if (loading) return <p className="loading">Ładowanie...</p>;
+   if (loading) return (
+    <Container fluid className="d-flex justify-content-center align-items-center vh-100">
+      <Spinner animation="border" variant="primary" role="status">
+        <span className="visually-hidden">Ładowanie...</span>
+      </Spinner>
+    </Container>
+  );
 
   return (
     <>
